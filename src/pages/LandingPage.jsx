@@ -43,8 +43,7 @@ const LandingPage = () => {
             </Box>
             <Box display={"flex"} alignItems={"center"} justifyContent={"space-evenly"} mt={"200px"}
                 sx={{
-                    background: 'inherit',
-                    backdropFilter: 'blur(10px)', 
+                    backdropFilter: 'blur(10px) !important', 
                     borderRadius: '20px'
                 }}       
             >
