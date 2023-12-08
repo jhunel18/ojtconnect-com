@@ -8,5 +8,4 @@ when naming function use camelCase.
 when naming file use PascalCase.
 #
 use "is" when using boolean data type.
-#
 ex. is_true, isChecked
