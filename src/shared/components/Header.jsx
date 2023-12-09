@@ -16,7 +16,7 @@ const Header = () => {
         <Box 
             display={"flex"} 
             justifyContent={"space-between"}
-            sx={{background: '#ffe0cc'}}
+            sx={{background: 'linear-gradient(146deg, rgba(255,225,210,1) 0%, rgba(255,255,255,1) 49%, rgba(255,225,210,1) 100%)'}}
             alignItems={'center'}
             p={"7px 20%"}
         >
