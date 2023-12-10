@@ -1,13 +1,18 @@
 import React from 'react'
 import ButtonContainedComp from '../shared/components/ButtonContainedComp'
 import { Typography, Box } from '@mui/material'
-const LoginComp = () => {
+import SignupStudentComp from './SignupComp'
+
+const LoginComp = ({ setShowLogin }) => {
+  const handleSetShowLogin = () => {
+    setShowLogin(false)
+  }
   return (<>
     <Typography variant='h5' fontWeight={'bold'} mt={"35px"}>
       Welcome to <span style={{color: '#F26822'}}>OJT Connect</span>
     </Typography>
     <Typography variant='body2' fontWeight={'bolder'} mt={0}>
-      Let's Get Started! <span style={{textDecoration: 'underline'}}>Signup here.</span>
+      Let's Get Started! <span style={{textDecoration: 'underline', cursor: 'pointer'}} onClick={handleSetShowLogin}>Signup here.</span>
     </Typography>
 
     <Box display={'flex'} alignItems={'center'} justifyContent={'space-around'} m={'50px 0 60px 0'}>

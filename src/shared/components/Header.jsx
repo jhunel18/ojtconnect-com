@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
     const link = [
-        {name: "Home", to: '/'},
+        {name: "Home", to: '/login'},
         {name: "Discover", to: '/discover'},
         {name: "More Services", to: '/services'},
     ]
