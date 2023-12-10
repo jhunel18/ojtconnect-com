@@ -2,7 +2,7 @@ import React from 'react'
 import TextField from '@mui/material/TextField'
 
 
-const TextBoxSizeableComp = ({id, label, width, height}) => {
+const TextBoxSizeableComp = ({id, label, width, height, type}) => {
 const style = {
     borderRadius: "8px",
     background: "#E7E8E9",
@@ -12,7 +12,7 @@ const style = {
 }
   return (
     <>
-      <TextField id={id} placeholder={label} variant="outlined" sx={style} width={width} height={height} />
+      <TextField id={id} placeholder={label} variant="outlined" sx={style} width={width} height={height} type={type} />
     </>
   )
 }
