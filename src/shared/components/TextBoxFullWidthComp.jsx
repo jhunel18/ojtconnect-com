@@ -2,7 +2,7 @@ import React from 'react'
 import TextField from '@mui/material/TextField'
 
 
-const TextBoxFullWidthComp = ({id, label}) => {
+const TextBoxFullWidthComp = ({id, label, type}) => {
 const style = {
     borderRadius: "8px",
     background: "#E7E8E9",
@@ -12,7 +12,7 @@ const style = {
 }
   return (
     <>
-      <TextField id={id} placeholder={label} variant="outlined" sx={style} fullWidth />
+      <TextField id={id} placeholder={label} variant="outlined" sx={style} type={type} fullWidth />
     </>
   )
 }
