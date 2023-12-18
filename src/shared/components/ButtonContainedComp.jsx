@@ -1,10 +1,10 @@
 import React from 'react'
 import { Button } from '@mui/material'
 
-const ButtonContainedComp = ({label, click}) => {
+const ButtonContainedComp = ({label, click, size}) => {
   
   return (<>
-      <Button variant="contained" onClick={click}
+      <Button variant="contained" onClick={click} size={size}
         sx={{
           color: '#ffff',
           background: '#F26822',

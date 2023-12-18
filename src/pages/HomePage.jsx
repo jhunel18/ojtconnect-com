@@ -15,10 +15,10 @@ const HomePage = () => {
             <img src={bg} width={"50%"} style={{flex: '2'}}/>
             <Box p={"25px 50px"} sx={{
                 borderRadius: '0 20px 20px 0',
-                background: '#ffff',
+                background: "#F6F7F8",
                 flex: '1'
             }}>
-                {showLogin ? <LoginComp setShowLogin={setShowLogin}/> : <SignupComp />}
+                {showLogin ? <LoginComp setShowLogin={setShowLogin}/> : <SignupComp setShowLogin={setShowLogin}/>}
                 
             </Box>
         </Box>
