@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { Box, Typography } from '@mui/material';
-
 import { styled } from '@mui/material/styles';
-
-
 import Paper from '@mui/material/Paper';
+import {StudentSignupComp,
+       UniversitySignupComp,
+       CompanySignupComp} from '../components/index';
+import SignupToggle from './SignupToggle';
+
 
 const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
   '& .MuiToggleButtonGroup-grouped': {
@@ -30,7 +32,24 @@ const SignupComp = () => {
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
   };
+  const [activeToggle, setActiveToggle] = useState('student');
+  const [showStudent, setShowStudent] = useState(true);
+  const [showUniversity, setShowUniversity] = useState(false);
+  const [showCompany, setShowCompany] = useState(false);
+
+  const handleToggle = (toggle) => {
+    setShowStudent(false);
+    setShowUniversity(false);
+    setShowCompany(false);
+    setActiveToggle(toggle);
+
+    if (toggle === 'student') setShowStudent(true);
+    else if (toggle === 'university') setShowUniversity(true);
+    else if (toggle === 'company') setShowCompany(true);
+  };
+
   
+
   return (<>
     <Paper
       elevation={0}
@@ -41,8 +60,8 @@ const SignupComp = () => {
         padding: '5px 12px',
         borderRadius: "37px",
         background: "#ffffff",
-        boxShadow: "inset 5px 5px 12px #d3d3d3, inset -5px -5px 12px #ededed",
-        width: '200px',
+        boxShadow:'inset 1px 1px 2px #F26822, inset 0px 0px 4px #F26822',
+        width: '100%',
         height: '20px'
       }}
     >
@@ -52,27 +71,23 @@ const SignupComp = () => {
         exclusive
         onChange={handleAlignment}
         aria-label="text alignment"
+        sx={{
+          display:'flex', 
+          width:'100%',
+          justifyContent:'space-around',
+           marginTop:'-1px'
+          }}
       >
-        {/*<ToggleButton value="left" aria-label="left aligned" sx={{
-          padding: '5px',
-          margin: '0px'
-        }}>
-          <Typography variant='button' color={"#F26822"} fontWeight={'bold'}>Student</Typography>
-        </ToggleButton>
-        <ToggleButton value="center" aria-label="centered" sx={{
-          padding: '5px',
-          margin: '0px'
-        }}>
-          <Typography variant='button' color={"#F26822"} fontWeight={'bold'}>University</Typography>
-        </ToggleButton>
-        <ToggleButton value="right" aria-label="right aligned" sx={{
-          padding: '5px',
-          margin: '0px'
-        }}>
-          <Typography variant='button' color={"#F26822"} fontWeight={'bold'}>Company</Typography>
-      </ToggleButton>*/}
+
+       <SignupToggle handleToggle={handleToggle} activeToggle={activeToggle}/>
+      
       </StyledToggleButtonGroup>
     </Paper>
+   <div style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
+      {showStudent && <StudentSignupComp/>}
+      {showUniversity && <UniversitySignupComp/>}
+      {showCompany && <CompanySignupComp/>}
+   </div>
   </>)
 }
 
