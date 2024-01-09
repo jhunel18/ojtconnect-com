@@ -7,9 +7,13 @@ import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import GoogleIcon from '@mui/icons-material/Google';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import ButtonIconComp from '../shared/components/ButtonIconComp'
+import { useNavigate } from 'react-router-dom'
+
 const LoginComp = ({ setShowLogin }) => {
+  const navigate = useNavigate()
   const handleSetShowLogin = () => {
     setShowLogin(false)
+    navigate("/signup")
   }
   return (<>
     <Typography variant='h5' fontWeight={'bold'} mt={"35px"}>

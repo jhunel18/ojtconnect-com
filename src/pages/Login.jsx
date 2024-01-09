@@ -10,6 +10,7 @@ const Login = () => {
         <Header />
         <Routes>
             <Route path='/login' element={<HomePage />} />
+            <Route path='/signup' element={<HomePage />} />
             <Route path='/discover' element={<DiscoverComp />} />
             <Route path='/services' element={<ServicesComp />} />
         </Routes>

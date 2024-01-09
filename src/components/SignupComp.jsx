@@ -11,6 +11,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import ButtonIconComp from '../shared/components/ButtonIconComp'
 import Paper from '@mui/material/Paper';
 import CheckboxComp from '../shared/components/CheckboxComp';
+import { useNavigate } from 'react-router-dom'
 
 const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
   '& .MuiToggleButtonGroup-grouped': {
@@ -29,6 +30,7 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
 }));
 
 const SignupComp = ({ setShowLogin }) => {
+  const navigate = useNavigate()
   const [alignment, setAlignment] = useState('left');
 
   const handleAlignment = (event, newAlignment) => {
@@ -37,6 +39,7 @@ const SignupComp = ({ setShowLogin }) => {
   
   const handleSetShowLogin = () => {
     setShowLogin(true)
+    navigate("/login")
   }
   return (<>
     <Paper
