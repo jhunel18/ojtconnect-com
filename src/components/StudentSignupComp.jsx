@@ -28,6 +28,7 @@ const StudentSignupComp = ({setShowLogin}) => {
           <TextBoxFullWidthComp id={"lastName"} label={"Last Name"} size={'small'} margin={"10px 0px"} />
           <TextBoxFullWidthComp type={"email"} id={"email"} label={"Email Address"} size={'small'} margin={"10px 0px"} />
           <TextBoxFullWidthComp type={"password"} id={"password"} label={"Password"} size={'small'} margin={"10px 0px"} />
+          <TextBoxFullWidthComp  id={"confirmPassword"} label={"Confirm Password"} size={'small'} margin={"10px 0px"} />
           <Box display={'flex'} justifyContent={'space-around'} alignItems={'center'}>
             <Box sx={{flex: 1, mr: 3}}>
               <TextBoxFullWidthComp type={"password"} id={"code"} label={"Verification Code"} size={'small'} margin={"10px 0px"}/>
