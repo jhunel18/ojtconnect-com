@@ -4,11 +4,13 @@ import Header from "../shared/components/Header"
 import HomePage from './HomePage'
 import ServicesComp from '../components/ServicesComp'
 import DiscoverComp from '../components/DiscoverComp'
+import LandingPage from './LandingPage'
 
 const Login = () => {
   return (<>
-        <Header />
+        {/* <Header /> */}
         <Routes>
+            <Route path='' element={<LandingPage />} />
             <Route path='/login' element={<HomePage />} />
             <Route path='/signup' element={<HomePage />} />
             <Route path='/discover' element={<DiscoverComp />} />
