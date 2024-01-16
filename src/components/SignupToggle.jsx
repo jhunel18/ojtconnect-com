@@ -23,7 +23,7 @@ const SignupToggle = ({handleToggle, activeToggle}) => {
   {toggle_button.map((tb, index) => (
     <React.Fragment key={index}>
          <ToggleButton value="left" aria-label="left aligned" sx={{
-            padding: '5px 15px',
+            padding: '4px 15px',
             margin: '0px',
             backgroundColor: activeToggle === tb.toggle ? '#F26822' : 'trasparent',
             borderRadius:'90px',
@@ -32,7 +32,7 @@ const SignupToggle = ({handleToggle, activeToggle}) => {
             <Typography variant='button' color={"#F26822"} fontWeight={'bold'}
             sx={{
                 color: activeToggle === tb.toggle ? 'white': '#F26822',
-                fontSize:'12px'
+                fontSize:'15px'
             }}
             >{tb.label}</Typography>
         </ToggleButton>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
@@ -22,28 +22,16 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
   },
 }));
 
-const SignupComp = ({ setShowLogin }) => {
+const SignupComp = ({ setShowLogin, activeToggle, is_ShowStudent, is_ShowUniversity, is_ShowCompany, handleToggle }) => {
   const [alignment, setAlignment] = useState('left');
-
-  const [activeToggle, setActiveToggle] = useState('student');
-  const [is_ShowStudent, setShowStudent] = useState(true);
-  const [is_ShowUniversity, setShowUniversity] = useState(false);
-  const [is_ShowCompany, setShowCompany] = useState(false);
-
-  const handleToggle = (toggle) => {
-    setShowStudent(false);
-    setShowUniversity(false);
-    setShowCompany(false);
-    setActiveToggle(toggle);
-
-    if (toggle === 'student') setShowStudent(true);
-    else if (toggle === 'university') setShowUniversity(true);
-    else if (toggle === 'company') setShowCompany(true);
-  };
-
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
   };
+
+  useEffect(() => {
+    // This useEffect will run whenever activeToggle changes.
+    handleToggle(activeToggle);
+}, [activeToggle, handleToggle]);
   
   return (<>
     <Paper
@@ -51,12 +39,12 @@ const SignupComp = ({ setShowLogin }) => {
       sx={{
         display: 'flex',
         flexWrap: 'wrap',
-        padding: '5px 12px',
+        padding: '3px 0px',
         borderRadius: "79px",
         background: "#ffffff",
-        boxShadow: "inset 5px 5px 4px #F2682280, inset -5px -5px 10px #F2682280",
+        boxShadow: "inset 1px 3px 15px #F2682280, inset 2px 1px 1px #F2682280",
         width: '100%',
-        height: '43px'
+        height: '40px'
       }}
     >
       <StyledToggleButtonGroup
@@ -70,7 +58,7 @@ const SignupComp = ({ setShowLogin }) => {
           width:'100%',
           justifyContent:'space-around',
            marginTop:'-1px',
-           padding:'5px'
+           padding:'4px',
           }}
       >
         <SignupToggle handleToggle={handleToggle} activeToggle={activeToggle}/>
