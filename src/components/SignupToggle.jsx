@@ -32,7 +32,7 @@ const SignupToggle = ({handleToggle, activeToggle}) => {
             <Typography variant='button' color={"#F26822"} fontWeight={'bold'}
             sx={{
                 color: activeToggle === tb.toggle ? 'white': '#F26822',
-                fontSize:'12px'
+                fontSize:'15px'
             }}
             >{tb.label}</Typography>
         </ToggleButton>

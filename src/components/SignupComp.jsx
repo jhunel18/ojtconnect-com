@@ -39,10 +39,10 @@ const SignupComp = ({ setShowLogin, activeToggle, is_ShowStudent, is_ShowUnivers
       sx={{
         display: 'flex',
         flexWrap: 'wrap',
-        padding: '5px 12px',
+        padding: '3px 0px',
         borderRadius: "79px",
         background: "#ffffff",
-        boxShadow: "inset 5px 5px 4px #F2682280, inset -5px -5px 10px #F2682280",
+        boxShadow: "inset 1px 3px 15px #F2682280, inset 2px 1px 1px #F2682280",
         width: '100%',
         height: '40px'
       }}
@@ -58,7 +58,7 @@ const SignupComp = ({ setShowLogin, activeToggle, is_ShowStudent, is_ShowUnivers
           width:'100%',
           justifyContent:'space-around',
            marginTop:'-1px',
-           padding:'4px'
+           padding:'4px',
           }}
       >
         <SignupToggle handleToggle={handleToggle} activeToggle={activeToggle}/>
