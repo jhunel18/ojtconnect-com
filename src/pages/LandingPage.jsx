@@ -22,12 +22,17 @@ const LandingPage = () => {
                     <img src={title} alt="title" style={{margin: 'auto 20px', width: 'auto', height: '13px'}} />
                 </div>
                 
-                <ul style={{listStyleType: 'none', margin: '0', padding: '0', float: 'right'}}>
+                <ul className='inter-font' style={{listStyleType: 'none', margin: '0', padding: '0', float: 'right'}}>
                     <li>HOME</li>
                     <li>ABOUT</li>
                     <li>DISCOVER</li>
                     <li>CONTACT US</li>
                 </ul>
+            </div>
+
+            <div style={{width: '600px', height: '500px', display: 'flex'}}>
+                <h1 className='league-spartan-font' style={{fontSize: '50px', fontWeight: 'bolder', margin: 'auto 30px', color: '#F26822', letterSpacing: '5px'}}>Get Started Your Learning & <br />Enrich Your Future</h1>
+                <p className='inter-font' style={{marginLeft: '30px'}}>Est Quis ipsam aut fuga magnam aut accusantium molestias est quam quidem et deleniti maiores et vitae dolore. Ex explicabo suscipit aut asperiores saepe qui vero odio sed suscipit autem a repellendus praesentium?</p>
             </div>
             
         </Box>
