@@ -1,0 +1,26 @@
+/* .customTheme .fc .fc-col-header-cell-cushion{
+    padding: 20px 4px;
+} */
+
+/* customStyles.module.css */
+.customTheme .fc-prev-button,
+.customTheme .fc-next-button,
+.customTheme .fc-today-button {
+  background-color: red;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.customTheme .fc-prev-button:hover,
+.customTheme .fc-next-button:hover,
+.customTheme .fc-today-button:hover {
+  background-color: green;
+}
+
+.customTheme .fc-prev-button:active,
+.customTheme .fc-next-button:active,
+.customTheme .fc-today-button:active {
+  background-color: #1f618d;
+}
