@@ -6,7 +6,7 @@ import timeGridPlugin from "@fullcalendar/timegrid"
 import interactionPlugin from "@fullcalendar/interaction"
 import listPlugin from "@fullcalendar/list"
 import { Box, List, ListItem, ListItemText, Typography } from "@mui/material"
-import css from "./CalendarCompCSS.module.css"
+
 const CalendarComp = () => {
     const [currentEvents, setCurrentEvents] = useState([])
     const handleDateClick = (selected) => {
@@ -64,30 +64,27 @@ const CalendarComp = () => {
 
                 {/*Calendar */}
                 <Box flex={"1 1 100%"} ml={"15px"}>
-                    <div className={css.customTheme}>
-                        <FullCalendar 
-                            themeSystem="customTheme"
-                            height={"75vh"}
-                            plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
-                            headerToolbar={{
-                                left: "title",
-                                center: "",
-                                right: "prev,next today"
-                            }}
-                            initialView= {'dayGridMonth'}
-                            editable= {true}
-                            selectable= {true}
-                            selectMirror= {true}
-                            dayMaxEvents= {true}
-                            select={handleDateClick}
-                            eventClick={handleEventClick}
-                            eventsSet={(events) => setCurrentEvents(events)}
-                            initialEvents={[
-                                {id: "12345", title: "Awa ko", date: "2024-01-05"},
-                                {id: "4321", title: "Taena may pasok na ule bukas", date: "2024-01-15"},
-                            ]}
-                        />
-                    </div>
+                    <FullCalendar 
+                        height={"75vh"}
+                        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
+                        headerToolbar={{
+                            left: "title",
+                            center: "",
+                            right: "prev,next today"
+                        }}
+                        initialView= {'dayGridMonth'}
+                        editable= {true}
+                        selectable= {true}
+                        selectMirror= {true}
+                        dayMaxEvents= {true}
+                        select={handleDateClick}
+                        eventClick={handleEventClick}
+                        eventsSet={(events) => setCurrentEvents(events)}
+                        initialEvents={[
+                            {id: "12345", title: "Awa ko", date: "2024-01-05"},
+                            {id: "4321", title: "Taena may pasok na ule bukas", date: "2024-01-15"},
+                        ]}
+                    />
                 </Box>
             </Box>
             
