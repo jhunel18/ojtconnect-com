@@ -30,10 +30,10 @@ const LandingPage = () => {
                 </ul>
             </div>
 
-            <div style={{width: '600px', height: '500px', display: 'flex'}}>
-                <h1 className='league-spartan-font' style={{fontSize: '50px', fontWeight: 'bolder', margin: 'auto 30px', color: '#F26822', letterSpacing: '5px'}}>Get Started Your Learning & <br />Enrich Your Future</h1>
+            <Box style={{width: '650px', height: 'auto', display: 'grid', marginTop: '140px'}}>
+                <h1 className='league-spartan-font' style={{fontSize: '55px', fontWeight: '800', margin: 'auto 30px', color: '#F26822', letterSpacing: '5px'}}>Get Started Your Learning & <br />Enrich Your Future</h1>
                 <p className='inter-font' style={{marginLeft: '30px'}}>Est Quis ipsam aut fuga magnam aut accusantium molestias est quam quidem et deleniti maiores et vitae dolore. Ex explicabo suscipit aut asperiores saepe qui vero odio sed suscipit autem a repellendus praesentium?</p>
-            </div>
+            </Box>
             
         </Box>
     </>)
