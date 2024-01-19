@@ -70,7 +70,7 @@ const CalendarComp = () => {
                         headerToolbar={{
                             left: "title",
                             center: "",
-                            right: "prev,next today"
+                            right: "prev,next"
                         }}
                         initialView= {'dayGridMonth'}
                         editable= {true}
