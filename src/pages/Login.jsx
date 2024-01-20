@@ -6,6 +6,7 @@ import ServicesComp from '../components/ServicesComp'
 import DiscoverComp from '../components/DiscoverComp'
 import LandingPage from './LandingPage'
 import CalendarComp from '../components/CalendarComp'
+import SchedulesComp from '../components/SchedulesComp'
 
 const Login = () => {
   return (<>
@@ -13,6 +14,7 @@ const Login = () => {
         <Routes>
             <Route path='' element={<LandingPage />} />
             <Route path='/calendar' element={<CalendarComp />} />
+            <Route path='/schedules' element={<SchedulesComp />} />
             <Route path='/login' element={<HomePage />} />
             <Route path='/signup' element={<HomePage />} />
             <Route path='/discover' element={<DiscoverComp />} />
