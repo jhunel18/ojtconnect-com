@@ -29,8 +29,8 @@ const CalendarComp = () => {
         }
       }
     return (<>
-        <Box m={"20px"}>
-            <Box display={'flex'} justifyContent={"space-between"}>
+        <Box sx={{background: '#ffffff', p: '25px', border: '1px solid black', borderRadius: '20px'}}>
+            <Box display={'flex'} justifyContent={"center"}>
                 {/*Calendar Side Bar*/}
                 {/*
                     <Box flex={"1 1 20%"} backgroundColor={"pink"} p={"15px"} borderRadius={"4px"}>
@@ -63,7 +63,7 @@ const CalendarComp = () => {
                 */}
 
                 {/*Calendar */}
-                <Box flex={"1 1 100%"} ml={"15px"}>
+                <Box flex={"1 1 100%"}>
                     <FullCalendar 
                         height={"75vh"}
                         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
