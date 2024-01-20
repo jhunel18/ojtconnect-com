@@ -30,7 +30,7 @@ const LandingPage = () => {
                     </Grid>
                     <Grid item lg={7} md={7} xs={12}>
                         <div style={{ display: 'flex', alignItems: 'center', marginLeft: 'auto' }}>
-                            <ul className='inter-font' style={{ listStyleType: 'none', margin: 0, padding: 0, display: 'flex', alignItems: 'center', flexDirection: 'row' }}>
+                            <ul className='inter-font header'>
                                 <li><a className='nav-link' href='#'>HOME</a></li>
                                 <li><a className='nav-link' href='#'>ABOUT</a></li>
                                 <li><a className='nav-link' href='#'>DISCOVER</a></li>
@@ -158,9 +158,18 @@ const LandingPage = () => {
 
         <Box sx={{ height: '40vh', backgroundColor: '#FFFCF2' }}>
             <Grid container>
-                <Grid item lg={10} md={10} sx={{margin: 'auto', textAlign: 'center', padding: '50px'}}>
+                <Grid item lg={10} md={10} sx={{ margin: 'auto', textAlign: 'center', padding: '50px' }}>
                     <img src={logo} alt="logo" style={{ width: '100px', height: '100px' }} />
-                    <Typography variant='subtitle2' sx={{color: '#1E1E1E'}}>OJT Connect Tagline Here</Typography>
+                    <Typography variant='subtitle2' sx={{ color: '#1E1E1E' }}>OJT Connect Tagline Here</Typography>
+                </Grid>
+                <Grid item lg={10} md={10}>
+                    <ul className='inter-font footer'>
+                        <li className='footer-link'>Home</li>
+                        <li className='footer-link'>Services</li>
+                        <li className='footer-link'>Article</li>
+                        <li className='footer-link'>Contact</li>
+                        <li className='footer-link'>About Us</li>
+                    </ul>
                 </Grid>
             </Grid>
 

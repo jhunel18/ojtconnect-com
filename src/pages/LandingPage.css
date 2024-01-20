@@ -9,10 +9,13 @@
     font-family: "League Spartan", sans-serif;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.header-link {
+    list-style-type: 'none'; 
+    margin: 0; 
+    padding: 0; 
+    display: 'flex'; 
+    align-items: 'center'; 
+    flex-direction: 'row';
     float: right;
 }
   
@@ -39,4 +42,8 @@ li {
 .fourth-content {
     color: #fff;
     text-align: justify;
+}
+
+.footer {
+    
 }
