@@ -1,12 +1,10 @@
 import React from 'react'
 import ButtonContainedComp from '../shared/components/ButtonContainedComp'
 import { Typography, Box } from '@mui/material'
+import Grid from '@mui/material/Unstable_Grid2';
 import SignupStudentComp from './SignupComp'
 import TextBoxFullWidthComp from '../shared/components/TextBoxFullWidthComp'
-import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
-import GoogleIcon from '@mui/icons-material/Google';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import ButtonIconComp from '../shared/components/ButtonIconComp'
+
 import { useNavigate } from 'react-router-dom'
 
 const LoginComp = ({ setShowLogin }) => {
@@ -28,24 +26,16 @@ const LoginComp = ({ setShowLogin }) => {
         <TextBoxFullWidthComp id={"password"} label={"Password"} size={'small'} type={'password'} margin={"15px 0px"}/>
       </form>
     </Box>
-    <Box display={'flex'} alignItems={'center'} justifyContent={'space-around'} m={'50px 0 60px 0'}>
-      <Box flex={1}>
-        <ButtonContainedComp label={"Login"}/>
-      </Box>
-      <ButtonContainedComp label={"Forgot Password"}/>
+    <Box sx={{flexGrow: 1}} m={'50px 0 60px 0'}>
+      <Grid container spacing={3} sx={{alignItems: 'stretch'}}>
+        <Grid xs={12} sm={12} md={12} lg={6}>
+          <ButtonContainedComp label={"Login"} width={"100%"}/>
+        </Grid>
+        <Grid xs={12} sm={12} md={12} lg={6}>
+          <ButtonContainedComp label={"Forgot Password"} width={"100%"}/>
+        </Grid>
+      </Grid>
     </Box>
-    
-    <hr />
-      
-    <Typography variant='body2' mt={0} textAlign={'center'}>
-      Or login with
-    </Typography>
-    <Box display={'flex'} alignItems={'center'} justifyContent={'space-evenly'} mt={'20px'}>
-      <ButtonIconComp logo={<FacebookOutlinedIcon />} size={"large"} color={'primary'}/>
-      <ButtonIconComp logo={<GoogleIcon />} size={"large"} color={'primary'}/>
-      <ButtonIconComp logo={<LinkedInIcon />} size={"large"} color={'primary'}/>
-    </Box>
-    
     </>)
 }
 
