@@ -1,12 +1,22 @@
 import React from 'react'
 import { Box, Typography, Button, Grid, Container } from '@mui/material'
+
+// Images
 import bg from '../assets/landingBackground1.png'
 import logo from '../assets/Logo.png'
 import title from '../assets/title.png'
 import thirdbg from '../assets/sec3Background.png'
 import thirdperson from '../assets/sec3Person.png'
 import building from '../assets/building.png'
+import facebook from '../assets/icons/facebook.png'
+import google from '../assets/icons/googleplus.png'
+import instagram from '../assets/icons/instagram.png'
+import pinterest from '../assets/icons/pinterest.png'
+import twitter from '../assets/icons/twitter.png'
+
+// CSS
 import './LandingPage.css'
+
 const LandingPage = () => {
     return (<>
         <Box
@@ -124,30 +134,30 @@ const LandingPage = () => {
                 </Grid>
             </Grid>
 
-            <Grid container marginTop={10}>
-                <Grid item lg={8} md={8} sx={{ margin: 'auto' }}>
+            <Grid container>
+                <Grid item lg={8} md={8} sm={10} sx={{ margin: 'auto' }}>
                     <Grid container spacing={8}>
-                        <Grid className='inter-font' item lg={4} md={4}>
+                        <Grid className='inter-font' item lg={4} md={4} sm={2}>
                             <Typography variant='h6' sx={{ color: '#fff', fontWeight: '700', textAlign: 'center' }} >Ut sint unde est commodi neque</Typography>
                             <Typography className='fourth-content' variant='subtitle2'>Lorem ipsum dolor sit amet. Sed quia nostrum ut vero unde ut laboriosam omnis est voluptas quibusdam aut iste esse ex ullam molestiae ut blanditiis doloremque. Sit nulla facilis et quam aspernatur aut mollitia voluptate ut vmodi voluptates! Et obcaecati iste qui atque dolore ut vero velit aut obcaecati repudiandae.</Typography>
                         </Grid>
-                        <Grid className='inter-font' item lg={4} md={4}>
+                        <Grid className='inter-font' item lg={4} md={4} sm={2}>
                             <Typography variant='h6' sx={{ color: '#fff', fontWeight: '700', textAlign: 'center' }} >Ut sint unde est commodi neque</Typography>
                             <Typography className='fourth-content' variant='subtitle2'>Lorem ipsum dolor sit amet. Sed quia nostrum ut vero unde ut laboriosam omnis est voluptas quibusdam aut iste esse ex ullam molestiae ut blanditiis doloremque. Sit nulla facilis et quam aspernatur aut mollitia voluptate ut vmodi voluptates! Et obcaecati iste qui atque dolore ut vero velit aut obcaecati repudiandae.</Typography>
                         </Grid>
-                        <Grid className='inter-font' item lg={4} md={4}>
+                        <Grid className='inter-font' item lg={4} md={4} sm={2}>
                             <Typography variant='h6' sx={{ color: '#fff', fontWeight: '700', textAlign: 'center' }} >Ut sint unde est commodi neque</Typography>
                             <Typography className='fourth-content' variant='subtitle2'>Lorem ipsum dolor sit amet. Sed quia nostrum ut vero unde ut laboriosam omnis est voluptas quibusdam aut iste esse ex ullam molestiae ut blanditiis doloremque. Sit nulla facilis et quam aspernatur aut mollitia voluptate ut vmodi voluptates! Et obcaecati iste qui atque dolore ut vero velit aut obcaecati repudiandae.</Typography>
                         </Grid>
-                        <Grid className='inter-font' item lg={4} md={4}>
+                        <Grid className='inter-font' item lg={4} md={4} sm={2}>
                             <Typography variant='h6' sx={{ color: '#fff', fontWeight: '700', textAlign: 'center' }} >Ut sint unde est commodi neque</Typography>
                             <Typography className='fourth-content' variant='subtitle2'>Lorem ipsum dolor sit amet. Sed quia nostrum ut vero unde ut laboriosam omnis est voluptas quibusdam aut iste esse ex ullam molestiae ut blanditiis doloremque. Sit nulla facilis et quam aspernatur aut mollitia voluptate ut vmodi voluptates! Et obcaecati iste qui atque dolore ut vero velit aut obcaecati repudiandae.</Typography>
                         </Grid>
-                        <Grid className='inter-font' item lg={4} md={4}>
+                        <Grid className='inter-font' item lg={4} md={4} sm={2}>
                             <Typography variant='h6' sx={{ color: '#fff', fontWeight: '700', textAlign: 'center' }} >Ut sint unde est commodi neque</Typography>
                             <Typography className='fourth-content' variant='subtitle2'>Lorem ipsum dolor sit amet. Sed quia nostrum ut vero unde ut laboriosam omnis est voluptas quibusdam aut iste esse ex ullam molestiae ut blanditiis doloremque. Sit nulla facilis et quam aspernatur aut mollitia voluptate ut vmodi voluptates! Et obcaecati iste qui atque dolore ut vero velit aut obcaecati repudiandae.</Typography>
                         </Grid>
-                        <Grid className='inter-font' item lg={4} md={4}>
+                        <Grid className='inter-font' item lg={4} md={4} sm={2}>
                             <Typography variant='h6' sx={{ color: '#fff', fontWeight: '700', textAlign: 'center' }} >Ut sint unde est commodi neque</Typography>
                             <Typography className='fourth-content' variant='subtitle2'>Lorem ipsum dolor sit amet. Sed quia nostrum ut vero unde ut laboriosam omnis est voluptas quibusdam aut iste esse ex ullam molestiae ut blanditiis doloremque. Sit nulla facilis et quam aspernatur aut mollitia voluptate ut vmodi voluptates! Et obcaecati iste qui atque dolore ut vero velit aut obcaecati repudiandae.</Typography>
                         </Grid>
@@ -156,13 +166,13 @@ const LandingPage = () => {
             </Grid>
         </Box>
 
-        <Box sx={{ height: '40vh', backgroundColor: '#FFFCF2' }}>
+        <Box sx={{ height: '30vh', backgroundColor: '#FFFCF2', padding: '40px' }}>
             <Grid container>
-                <Grid item lg={10} md={10} sx={{ margin: 'auto', textAlign: 'center', padding: '50px' }}>
+                <Grid item lg={10} md={10} sx={{ margin: 'auto', textAlign: 'center' }}>
                     <img src={logo} alt="logo" style={{ width: '100px', height: '100px' }} />
                     <Typography variant='subtitle2' sx={{ color: '#1E1E1E' }}>OJT Connect Tagline Here</Typography>
                 </Grid>
-                <Grid item lg={10} md={10}>
+                <Grid item lg={10} md={10} sx={{ margin: "auto", textAlign: 'center' }}>
                     <ul className='inter-font footer'>
                         <li className='footer-link'>Home</li>
                         <li className='footer-link'>Services</li>
@@ -171,6 +181,14 @@ const LandingPage = () => {
                         <li className='footer-link'>About Us</li>
                     </ul>
                 </Grid>
+                <Grid item lg={10} md={10} sx={{ margin: "auto", textAlign: 'center' }}>
+                    <img className='icon' src={facebook} alt="facebook" />
+                    <img className='icon' src={google} alt="google" />
+                    <img className='icon' src={instagram} alt="instagram" />
+                    <img className='icon' src={pinterest} alt="pinterest" />
+                    <img className='icon' src={twitter} alt="twitter" />
+                </Grid>
+
             </Grid>
 
         </Box>
