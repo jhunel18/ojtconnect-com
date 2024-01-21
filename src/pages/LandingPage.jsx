@@ -1,5 +1,9 @@
-import React from 'react'
-import { Box, Typography, Button, Grid, Container } from '@mui/material'
+import React, { useState } from 'react'
+import { Box, Typography, Button, Grid, Hidden } from '@mui/material'
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import {Menu, MenuItem} from '@mui/material';
+
 
 // Images
 import bg from '../assets/landingBackground1.png'
@@ -18,8 +22,20 @@ import twitter from '../assets/icons/twitter.png'
 import './LandingPage.css'
 
 const LandingPage = () => {
+
+    const [anchorEl, setAnchorEl] = useState(null)
+
+    const handleMenuClick = (event) => {
+        setAnchorEl(event.currentTarget)
+    }
+
+    const handleMenuClose = (event) => {
+        setAnchorEl(null)
+    }
+
     return (<>
         <Box
+            className='first-section'
             sx={{
                 background: `url(${bg})`,
                 backgroundRepeat: 'no-repeat',
@@ -28,49 +44,69 @@ const LandingPage = () => {
                 padding: '7em',
             }}
         >
-            <Container maxWidth="lg">
-                <Grid container spacing={2} alignItems="center">
-                    <Grid item lg={5} md={7} xs={12}>
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                            <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <img src={logo} alt="logo" style={{ width: '55px', height: '55px' }} />
-                                <img src={title} alt="title" style={{ margin: 'auto 20px', width: 'auto', height: '13px' }} />
-                            </div>
+            <Grid container spacing={2} alignItems="center">
+                <Grid item xl={2} lg={4} md={3} sm={2} xs={2}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                        <div style={{ display: 'flex', alignItems: 'center' }}>
+                            <img src={logo} alt="logo" style={{ width: '55px', height: '55px' }} />
+                            <img className='ojt-connect-title' src={title} alt="title" style={{ margin: 'auto 20px', width: 'auto', height: '13px' }} />
                         </div>
-                    </Grid>
-                    <Grid item lg={7} md={7} xs={12}>
-                        <div style={{ display: 'flex', alignItems: 'center', marginLeft: 'auto' }}>
+                    </div>
+                </Grid>
+                <Grid item xl={10} lg={8} md={9} sm={10} xs={10}>
+                    <Hidden lgDown>
+                        <div style={{ display: 'flex', alignItems: 'center', marginLeft: 'auto', justifyContent: 'center' }}>
                             <ul className='inter-font header'>
                                 <li><a className='nav-link' href='#'>HOME</a></li>
                                 <li><a className='nav-link' href='#'>ABOUT</a></li>
                                 <li><a className='nav-link' href='#'>DISCOVER</a></li>
                                 <li><a className='nav-link' href='#'>CONTACT US</a></li>
                             </ul>
+
                         </div>
-                    </Grid>
+                    </Hidden>
+                    <Hidden lgUp>
+                        <div style={{ display: 'flex', alignItems: 'center', marginLeft: 'auto', justifyContent: 'end' }}>
+                            <IconButton onClick={handleMenuClick}>
+                                <MenuIcon
+                                    fontSize='large'
+                                    sx={{ color: '#F26822' }}
+                                />
+                            </IconButton>
+                            <Menu
+                                anchorEl={anchorEl}
+                                open={Boolean(anchorEl)}
+                                onClose={handleMenuClose}>
+                                <MenuItem onClick={handleMenuClose}>Home</MenuItem>
+                                <MenuItem onClick={handleMenuClose}>About</MenuItem>
+                                <MenuItem onClick={handleMenuClose}>Discover</MenuItem>
+                                <MenuItem onClick={handleMenuClose}>Contact</MenuItem>
+                            </Menu>
+                        </div>
+                    </Hidden>
                 </Grid>
+            </Grid>
 
-                <Grid container spacing={2} sx={{ marginTop: '9em' }}>
-                    <Grid item lg={7} md={12}>
-                        <h1 className='league-spartan-font' style={{ fontSize: 'clamp(36px, 10vw, 55px)', fontWeight: '800', margin: 'auto 30px', color: '#F26822', letterSpacing: '5px' }}>
-                            Get Started Your Learning & <br /> Enrich Your Future
-                        </h1>
-                    </Grid>
-                    <Grid item lg={7} md={12}>
-                        <p className='inter-font' style={{ marginLeft: '30px' }}>
-                            Est Quis ipsam aut fuga magnam aut accusantium molestias est quam quidem et deleniti maiores et vitae dolore. Ex explicabo suscipit aut asperiores saepe qui vero odio sed suscipit autem a repellendus praesentium?
-                        </p>
-                    </Grid>
+            <Grid className='first-section-group' container spacing={2} sx={{ marginTop: '9em' }}>
+                <Grid item lg={7} md={12} sm={10} xs={10}>
+                    <h1 className='league-spartan-font first-section-title' style={{ fontSize: 'clamp(36px, 10vw, 55px)', fontWeight: '800', margin: 'auto 30px', color: '#F26822', letterSpacing: '5px' }}>
+                        Get Started Your Learning & <br /> Enrich Your Future
+                    </h1>
                 </Grid>
+                <Grid item lg={7} md={12} sm={10} xs={10}>
+                    <p className='inter-font first-section-subtitle' style={{ marginLeft: '30px' }}>
+                        Est Quis ipsam aut fuga magnam aut accusantium molestias est quam quidem et deleniti maiores et vitae dolore. Ex explicabo suscipit aut asperiores saepe qui vero odio sed suscipit autem a repellendus praesentium?
+                    </p>
+                </Grid>
+            </Grid>
 
-                <Grid container spacing={2} sx={{ marginTop: '3em', alignItems: 'center' }}>
-                    <Grid item lg={12} md={12} sx={{ textAlign: 'right' }}>
-                        <button style={{ backgroundColor: '#F26822', color: '#fff', borderRadius: '30px', border: '0', padding: '10px 30px', fontSize: '1.5rem', fontWeight: '600', width: '18%', boxShadow: '-5px 5px 10px #8b8b8b, 5px -5px 10px #ffffff', marginLeft: 'auto' }}>
-                            SIGN UP
-                        </button>
-                    </Grid>
+            <Grid container spacing={2} sx={{ alignItems: 'center' }}>
+                <Grid className='section-sign-up' item lg={12} md={12} sm={12} xs={12} sx={{ marginTop: '3em', textAlign: 'right' }}>
+                    <button className='sign-up-btn' style={{ backgroundColor: '#F26822', color: '#fff', borderRadius: '30px', border: '0', padding: '10px 30px', fontSize: '1.5rem', fontWeight: '600', width: '200px', boxShadow: '-5px 5px 10px #8b8b8b, 5px -5px 10px #ffffff', marginLeft: 'auto' }}>
+                        SIGN UP
+                    </button>
                 </Grid>
-            </Container>
+            </Grid>
         </Box>
 
         <Box sx={{ height: '50vh', display: 'flex', alignItems: 'center' }}>

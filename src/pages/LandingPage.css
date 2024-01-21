@@ -55,3 +55,73 @@ li {
     height: 50px;
     margin:  0 20px;
 }
+/* SM Screens */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    .first-section {
+        padding: 80px !important;
+        background: #f4e1ce !important;
+        height: auto !important;
+    }
+
+    .first-section-group {
+        margin-top: 3em !important;
+    }
+
+    .first-section-title {
+        font-size: 45px !important;
+        margin: auto 15px !important;
+    }
+
+    .first-section-subtitle {
+        margin: 15px !important;
+    }
+
+    .section-sign-up {
+        text-align: center !important;
+    }
+
+    .sign-up-btn {
+        width: 200px !important;
+        margin: 0 auto;
+    }
+}
+
+
+/* XS Screens */
+@media screen and (max-width: 600px) {
+    .first-section {
+        padding: 30px !important;
+        background: #f4e1ce !important;
+        height: auto !important;
+    }
+
+    .ojt-connect-title {
+        display: none;
+    }
+
+    .first-section-group {
+        margin-top: 3em !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .first-section-title {
+        font-size: 35px !important;
+        margin: auto 15px !important;
+    }
+
+    .first-section-subtitle {
+        margin: 15px !important;
+    }
+
+    .section-sign-up {
+        text-align: center !important;
+        margin: 1em !important;
+    }
+
+    .sign-up-btn {
+        width: 200px !important;
+        margin: 0 auto;
+    }
+}
