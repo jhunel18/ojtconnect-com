@@ -5,6 +5,7 @@ import UniversityImage from '../assets/university.png'
 import CompanyImage from '../assets/company.png'
 import LoginComp from '../components/LoginComp'
 import SignupComp from '../components/SignupComp'
+import ImageContainer from '../shared/components/ImageContainer'
 
 const HomePage = () => {
     const [showLogin, setShowLogin] = useState(true)
@@ -45,13 +46,12 @@ const HomePage = () => {
             {showLogin 
             ?   <img src={bg} width={"50%"} style={{flex: '2'}}/>
             :<>
-                {is_ShowStudent && (<img src={bg} width={"50%"}style={styles}
-                    onLoad={(e) => {e.target.style.opacity = 1; e.target.style.transform = 'scale(1)'; 
-                 }}/>)}
-                {is_ShowUniversity && <img src={UniversityImage} width={"50%"} style={styles}
+                {is_ShowStudent && (<ImageContainer src={bg} nLoad={(e) => {e.target.style.opacity = 1; e.target.style.transform = 'scale(1)'; 
+                }} />)}
+                {is_ShowUniversity && <ImageContainer src={UniversityImage}
                      onLoad={(e) => {e.target.style.opacity = 1; e.target.style.transform = 'scale(1)'; 
                 }}/>}
-                {is_ShowCompany && <img src={CompanyImage} width={"50%"} style={styles}
+                {is_ShowCompany && <ImageContainer src={CompanyImage}
                      onLoad={(e) => {e.target.style.opacity = 1; e.target.style.transform = 'scale(1)'; 
                 }}/>} 
             </> }
