@@ -9,6 +9,7 @@ import CalendarComp from './components/CalendarComp'
 import SchedulesComp from './components/SchedulesComp'
 import MessageNotifTopComp from './shared/components/MessageNotifTopComp'
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import SignedInNavigation from './shared/components/SignedInNavigation'
 
 const AppRoutes = () => {
     return (<>
@@ -21,6 +22,7 @@ const AppRoutes = () => {
             <Route path='/signup' element={<HomePage />} />
             <Route path='/discover' element={<DiscoverComp />} />
             <Route path='/services' element={<ServicesComp />} />
+            <Route path='/navigation' element={<SignedInNavigation />} />
         </Routes>
     </>)
 }
