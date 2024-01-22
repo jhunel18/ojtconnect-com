@@ -10,10 +10,6 @@ const SignupToggle = ({handleToggle, activeToggle}) => {
             toggle:'student'
         },
         {
-            label:'University',
-            toggle:'university'
-        },
-        {
             label:'Company',
             toggle:'company'
         }

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Box } from '@mui/material'
 import bg from "../assets/login.png"
-import UniversityImage from '../assets/university.png'
 import CompanyImage from '../assets/company.png'
 import LoginComp from '../components/LoginComp'
 import SignupComp from '../components/SignupComp'
@@ -11,17 +10,14 @@ const HomePage = () => {
     const [showLogin, setShowLogin] = useState(true)
     const [activeToggle, setActiveToggle] = useState('student');
     const [is_ShowStudent, setShowStudent] = useState(false);
-    const [is_ShowUniversity, setShowUniversity] = useState(false);
     const [is_ShowCompany, setShowCompany] = useState(false);
 
     const handleToggle = (toggle) => {
         setShowStudent(false);
-        setShowUniversity(false);
         setShowCompany(false);
         setActiveToggle(toggle);
       
         if (toggle === 'student') setShowStudent(true);
-        else if (toggle === 'university') setShowUniversity(true);
         else if (toggle === 'company') setShowCompany(true);
       };
 
@@ -29,12 +25,6 @@ const HomePage = () => {
         setShowLogin(false)
     )
 
-    const styles={
-        flex: '2', 
-        borderRadius:'20px 0 0 20px',       
-        opacity: 0, transform:'scale(0.8)', 
-        transition:'opacity 0.5s ease-in-out, transform 0.5s ease-in-out'
-    }
 
     return (<>
         <Box display={'flex'} p={"5% 10%"} 
@@ -46,14 +36,8 @@ const HomePage = () => {
             {showLogin 
             ?   <img src={bg} width={"50%"} style={{flex: '2'}}/>
             :<>
-                {is_ShowStudent && (<ImageContainer src={bg} nLoad={(e) => {e.target.style.opacity = 1; e.target.style.transform = 'scale(1)'; 
-                }} />)}
-                {is_ShowUniversity && <ImageContainer src={UniversityImage}
-                     onLoad={(e) => {e.target.style.opacity = 1; e.target.style.transform = 'scale(1)'; 
-                }}/>}
-                {is_ShowCompany && <ImageContainer src={CompanyImage}
-                     onLoad={(e) => {e.target.style.opacity = 1; e.target.style.transform = 'scale(1)'; 
-                }}/>} 
+                {is_ShowStudent && (<ImageContainer src={bg} />)}
+                {is_ShowCompany && <ImageContainer src={CompanyImage}/>} 
             </> }
            
             <Box p={"25px 50px"} sx={{
@@ -68,7 +52,6 @@ const HomePage = () => {
                     activeToggle={activeToggle} 
                     is_ShowStudent={is_ShowStudent} 
                     is_ShowCompany={is_ShowCompany} 
-                    is_ShowUniversity={is_ShowUniversity}
                     handleToggle={handleToggle}
                 />}
                 
