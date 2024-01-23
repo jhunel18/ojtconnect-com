@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Box } from '@mui/material'
-import bg from "../assets/login.png"
+import bg from "../assets/login2.png"
 import UniversityImage from '../assets/university.png'
 import CompanyImage from '../assets/company.png'
 import LoginComp from '../components/LoginComp'
@@ -36,16 +36,21 @@ const HomePage = () => {
     }
 
     return (<>
-        <Box display={'flex'} p={"5% 20%"} 
+        <Box display={'flex'} alignItems={"stretch"}
             sx={{
                 background: "linear-gradient(146deg, rgba(255,151,85,1) 0%, rgba(255,255,255,1) 54%, rgba(254,179,139,1) 100%)",
+                height: '100vh'
             }}
         >
-            <Box>
+            <Box sx={{
+                borderRadius: '0 20px 20px 0',
+                background: "#F6F7F8",
+                flex: '1',
+            }}>
                 {showLogin 
-                ?   <img src={bg} width={"100%"} height={"auto"} style={styles} onLoad={(e) => {e.target.style.opacity = 1; e.target.style.transform = 'scale(1)'; }}/>
+                ?   <img src={bg} width={"100%"} style={styles} onLoad={(e) => {e.target.style.opacity = 1; e.target.style.transform = 'scale(1)'; }}/>
                 :<>
-                    {is_ShowStudent && (<img src={bg} width={"100%"}style={styles}
+                    {is_ShowStudent && (<img src={bg} width={"100%"} style={styles}
                         onLoad={(e) => {e.target.style.opacity = 1; e.target.style.transform = 'scale(1)';
                      }}/>)}
                     {is_ShowUniversity && <img src={UniversityImage} width={"100%"} style={styles}
@@ -60,7 +65,7 @@ const HomePage = () => {
             <Box p={"25px 50px"} sx={{
                 borderRadius: '0 20px 20px 0',
                 background: "#F6F7F8",
-                flex: '1'
+                flex: '1',
             }}>
                 {showLogin 
                 ? <LoginComp setShowLogin={setShowLogin}/> 
