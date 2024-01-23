@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Box, Typography, Button, Grid, Hidden } from '@mui/material'
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import {Menu, MenuItem} from '@mui/material';
+import { Menu, MenuItem } from '@mui/material';
 
 
 // Images
@@ -130,26 +130,28 @@ const LandingPage = () => {
             <Grid container spacing={2}>
                 <Grid item lg={8} md={10} sx={{ margin: 'auto' }}>
                     <div style={{ width: '100%', height: '70vh', background: '#FD9F5A', borderRadius: '25px', boxShadow: '8px 8px 16px #bebebe, -8px -8px 16px #ffffff' }}>
-                        <Grid container>
-                            <Grid item lg={6} md={6} style={{ display: 'flex', alignItems: 'center', color: '#fff' }}>
+                        <Grid className='' container>
+                            <Grid item lg={6} md={6} sm={12} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
                                 <div style={{ padding: '30px' }}>
                                     <Typography variant='h5' sx={{ fontWeight: '700', margin: '20px' }}>Lorem ipsum dolor sit amet, consectetur</Typography>
                                     <Typography variant='subtitle1' sx={{ margin: '20px', lineHeight: '20px', fontWeight: '600' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget diam.</Typography>
                                     <Typography variant='subtitle2' sx={{ margin: '20px' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus .</Typography>
                                 </div>
                             </Grid>
-                            <Grid item lg={6} md={6}>
-                                <img
-                                    style={{
-                                        width: '100%',
-                                        height: '70vh',
-                                        objectFit: 'cover',
-                                        borderRadius: '0 25px 25px 0',
-                                    }}
-                                    src={thirdperson}
-                                    alt="person"
-                                />
-                            </Grid>
+                            <Hidden mdDown>
+                                <Grid item lg={6} md={6}>
+                                    <img
+                                        style={{
+                                            width: '100%',
+                                            height: '70vh',
+                                            objectFit: 'cover',
+                                            borderRadius: '0 25px 25px 0',
+                                        }}
+                                        src={thirdperson}
+                                        alt="person"
+                                    />
+                                </Grid>
+                            </Hidden>
                         </Grid>
                     </div>
                 </Grid>
