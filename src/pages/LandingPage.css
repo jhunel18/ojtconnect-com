@@ -10,15 +10,15 @@
 }
 
 .header-link {
-    list-style-type: 'none'; 
-    margin: 0; 
-    padding: 0; 
-    display: 'flex'; 
-    align-items: 'center'; 
+    list-style-type: 'none';
+    margin: 0;
+    padding: 0;
+    display: 'flex';
+    align-items: 'center';
     flex-direction: 'row';
     float: right;
 }
-  
+
 li {
     display: inline-block;
     text-align: center;
@@ -53,5 +53,85 @@ li {
 .icon {
     width: 50px;
     height: 50px;
-    margin:  0 20px;
+    margin: 0 20px;
+}
+
+/* MD Screens */
+@media screen and (min-width: 901px) and (max-width: 1279px) {
+    .first-section-group {
+        margin-top: 3em !important;
+    }
+}
+
+/* SM Screens */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    .first-section {
+        padding: 80px !important;
+        background: rgb(255, 255, 255) !important;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(242, 104, 34, 0.5410539215686274) 97%) !important;
+        height: auto !important;
+    }
+
+    .first-section-group {
+        margin-top: 3em !important;
+    }
+
+    .first-section-title {
+        font-size: 45px !important;
+        margin: auto 15px !important;
+    }
+
+    .first-section-subtitle {
+        margin: 15px !important;
+    }
+
+    .section-sign-up {
+        text-align: center !important;
+    }
+
+    .sign-up-btn {
+        width: 200px !important;
+        margin: 0 auto;
+    }
+}
+
+
+/* XS Screens */
+@media screen and (max-width: 600px) {
+    .first-section {
+        padding: 30px !important;
+        background: rgb(255, 255, 255) !important;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(242, 104, 34, 0.5410539215686274) 97%) !important;
+        height: auto !important;
+    }
+
+    .ojt-connect-title {
+        display: none;
+    }
+
+    .first-section-group {
+        margin-top: 3em !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .first-section-title {
+        font-size: 35px !important;
+        margin: auto 15px !important;
+    }
+
+    .first-section-subtitle {
+        margin: 15px !important;
+    }
+
+    .section-sign-up {
+        text-align: center !important;
+        margin: 1em !important;
+    }
+
+    .sign-up-btn {
+        width: 200px !important;
+        margin: 0 auto;
+    }
 }
