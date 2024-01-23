@@ -29,32 +29,33 @@ const HomePage = () => {
     )
 
     const styles={
-        flex: '2', 
+        flex: '2',
         borderRadius:'20px 0 0 20px',       
         opacity: 0, transform:'scale(0.8)', 
         transition:'opacity 0.5s ease-in-out, transform 0.5s ease-in-out'
     }
 
     return (<>
-        <Box display={'flex'} p={"5% 10%"} 
+        <Box display={'flex'} p={"5% 20%"} 
             sx={{
                 background: "linear-gradient(146deg, rgba(255,151,85,1) 0%, rgba(255,255,255,1) 54%, rgba(254,179,139,1) 100%)",
             }}
         >
-            
-            {showLogin 
-            ?   <img src={bg} width={"50%"} style={{flex: '2'}}/>
-            :<>
-                {is_ShowStudent && (<img src={bg} width={"50%"}style={styles}
-                    onLoad={(e) => {e.target.style.opacity = 1; e.target.style.transform = 'scale(1)'; 
-                 }}/>)}
-                {is_ShowUniversity && <img src={UniversityImage} width={"50%"} style={styles}
-                     onLoad={(e) => {e.target.style.opacity = 1; e.target.style.transform = 'scale(1)'; 
-                }}/>}
-                {is_ShowCompany && <img src={CompanyImage} width={"50%"} style={styles}
-                     onLoad={(e) => {e.target.style.opacity = 1; e.target.style.transform = 'scale(1)'; 
-                }}/>} 
-            </> }
+            <Box>
+                {showLogin 
+                ?   <img src={bg} width={"100%"} height={"auto"} style={styles} onLoad={(e) => {e.target.style.opacity = 1; e.target.style.transform = 'scale(1)'; }}/>
+                :<>
+                    {is_ShowStudent && (<img src={bg} width={"100%"}style={styles}
+                        onLoad={(e) => {e.target.style.opacity = 1; e.target.style.transform = 'scale(1)';
+                     }}/>)}
+                    {is_ShowUniversity && <img src={UniversityImage} width={"100%"} style={styles}
+                         onLoad={(e) => {e.target.style.opacity = 1; e.target.style.transform = 'scale(1)'; 
+                    }}/>}
+                    {is_ShowCompany && <img src={CompanyImage} width={"100%"} style={styles}
+                         onLoad={(e) => {e.target.style.opacity = 1; e.target.style.transform = 'scale(1)'; 
+                    }}/>} 
+                </> }
+            </Box>
            
             <Box p={"25px 50px"} sx={{
                 borderRadius: '0 20px 20px 0',
