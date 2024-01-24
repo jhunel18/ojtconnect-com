@@ -43,7 +43,7 @@ const LandingPage = () => {
                 background: `url(${bg})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
-                height: '80vh',
+                height: 'auto',
                 padding: '7em',
             }}
         >
