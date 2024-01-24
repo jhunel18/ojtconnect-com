@@ -1,0 +1,57 @@
+
+img {
+    transition: opacity 0.5s ease; 
+  }
+  
+  Box {
+    transition: padding 0.5s ease; 
+  }
+
+.form-container{
+    border-radius: 0 20px 20px 0;
+    background: #F6F7F8;
+    flex: 1;
+    padding: 25px 50px;
+}
+
+  @media screen and (min-width: 980px) and (max-width: 1279px) {
+    
+      Box {
+        padding: 5%;
+      }
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 979px) {
+     
+    img {
+      
+      display: none;
+      }
+      .form-container{
+        border-radius: 20px;
+      }
+      Box {
+        padding: 10%;
+      }
+
+}
+
+@media screen and (max-width: 600px) {
+     
+    img {
+        display: none;
+      
+      }
+    
+      
+      Box {
+        padding: 5%;
+      }
+      .form-container{
+        border-radius: 20px;
+      }
+
+}
+
+  

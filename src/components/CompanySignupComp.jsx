@@ -1,9 +1,9 @@
-import React from 'react'
-import { Box, Typography } from '@mui/material';
-import TextBoxFullWidthComp from '../shared/components/TextBoxFullWidthComp'
-import CheckboxComp from '../shared/components/CheckboxComp';
-import ButtonContainedComp from '../shared/components/ButtonContainedComp';
-import { useNavigate } from 'react-router-dom';
+import React                 from 'react'
+import { Box, Typography }   from '@mui/material';
+import TextBoxFullWidthComp  from '../shared/components/TextBoxFullWidthComp'
+import CheckboxComp          from '../shared/components/CheckboxComp';
+import ButtonContainedComp   from '../shared/components/ButtonContainedComp';
+import { useNavigate }       from 'react-router-dom';
 
 const CompanySignupComp = ({setShowLogin}) => {
 
@@ -33,7 +33,12 @@ const CompanySignupComp = ({setShowLogin}) => {
         </form>
         <Box display={'flex'} justifyContent={'center'} m={'5px 0 10px 0'} alignItems={'center'}>
             <CheckboxComp />
-            <Typography variant='body2'>
+            <Typography variant='body2'
+             sx={{
+               fontSize: 'inherit', 
+              '@media (max-width: 464px)': {
+               fontSize: '12px',},
+               }}>
               I have read the terms and condition.
             </Typography>
         </Box>
