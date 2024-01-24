@@ -17,6 +17,9 @@ import google from '../assets/icons/googleplus.png'
 import instagram from '../assets/icons/instagram.png'
 import pinterest from '../assets/icons/pinterest.png'
 import twitter from '../assets/icons/twitter.png'
+import verified_icon from '../assets/icons/verified_icon.png'
+import laptoplist_icon from '../assets/icons/laptoplist_icon.png'
+import messaging_icon from '../assets/icons/messaging_icon.png'
 
 // CSS
 import './LandingPage.css'
@@ -77,10 +80,10 @@ const LandingPage = () => {
                                 anchorEl={anchorEl}
                                 open={Boolean(anchorEl)}
                                 onClose={handleMenuClose}>
-                                <MenuItem onClick={handleMenuClose}>Home</MenuItem>
-                                <MenuItem onClick={handleMenuClose}>About</MenuItem>
-                                <MenuItem onClick={handleMenuClose}>Discover</MenuItem>
-                                <MenuItem onClick={handleMenuClose}>Contact</MenuItem>
+                                <MenuItem onClick={handleMenuClose}>HOME</MenuItem>
+                                <MenuItem onClick={handleMenuClose}>ABOUT</MenuItem>
+                                <MenuItem onClick={handleMenuClose}>DISCOVER</MenuItem>
+                                <MenuItem onClick={handleMenuClose}>CONTACT US</MenuItem>
                             </Menu>
                         </div>
                     </Hidden>
@@ -88,14 +91,14 @@ const LandingPage = () => {
             </Grid>
 
             <Grid className='first-section-group' container spacing={2} sx={{ marginTop: '9em' }}>
-                <Grid item lg={7} md={12} sm={10} xs={10}>
+                <Grid item lg={7.5} md={12} sm={10} xs={10}>
                     <h1 className='league-spartan-font first-section-title' style={{ fontSize: 'clamp(36px, 10vw, 55px)', fontWeight: '800', margin: 'auto 30px', color: '#F26822', letterSpacing: '5px' }}>
-                        Get Started Your Learning & <br /> Enrich Your Future
+                        A Connection that Leads to a Foundation of Experiences
                     </h1>
                 </Grid>
-                <Grid item lg={7} md={12} sm={10} xs={10}>
-                    <p className='inter-font first-section-subtitle' style={{ marginLeft: '30px' }}>
-                        Est Quis ipsam aut fuga magnam aut accusantium molestias est quam quidem et deleniti maiores et vitae dolore. Ex explicabo suscipit aut asperiores saepe qui vero odio sed suscipit autem a repellendus praesentium?
+                <Grid item lg={8} md={12} sm={10} xs={10}>
+                    <p className='inter-font first-section-subtitle' style={{ marginLeft: '30px', fontSize: '25px', fontWeight: '500' }}>
+                        JOIN OJT CONNECT TODAY!
                     </p>
                 </Grid>
             </Grid>
@@ -111,8 +114,8 @@ const LandingPage = () => {
 
         <Box sx={{ height: '50vh', display: 'flex', alignItems: 'center' }}>
             <Grid container>
-                <Grid item lg={4} md={4} sm={10} sx={{ margin: 'auto', textAlign: 'center' }}>
-                    <h2 className='tagline inter-font'>Ut omnis nobis et culpa recusandae ut temporibus consectetur et sunt repellendus. Aut expedita galisum non cons.</h2>
+                <Grid item lg={6} md={6} sm={8} xs={8} sx={{ margin: 'auto', textAlign: 'center' }}>
+                    <h2 className='tagline inter-font'>Enrich your learning and future with valuable ON THE JOB Training opportunities.</h2>
                 </Grid>
             </Grid>
         </Box>
@@ -133,9 +136,9 @@ const LandingPage = () => {
                         <Grid className='' container>
                             <Grid item lg={6} md={6} sm={12} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
                                 <div style={{ padding: '30px' }}>
-                                    <Typography variant='h5' sx={{ fontWeight: '700', margin: '20px' }}>Lorem ipsum dolor sit amet, consectetur</Typography>
-                                    <Typography variant='subtitle1' sx={{ margin: '20px', lineHeight: '20px', fontWeight: '600' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget diam.</Typography>
-                                    <Typography variant='subtitle2' sx={{ margin: '20px' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus .</Typography>
+                                    <Typography variant='h5' sx={{ fontWeight: '700', margin: '20px' }}>ABOUT OJT CONNECT</Typography>
+                                    <Typography variant='subtitle2' sx={{ margin: '20px', lineHeight: '20px', fontWeight: '600' }}>OJT connect is an essential platform that facilitates connections between college students and graduates from rural areas of the Philippines with companies, both locally and abroad. By providing valuable work experience opportunities, OJT Connect helps these individuals enhance their resumes and increase their chances of securing employment after graduation</Typography>
+                                    <Typography variant='subtitle2' sx={{ margin: '20px', lineHeight: '20px', fontWeight: '600' }}>OJT Connect is a commendable platform that empowers individuals by providing them with the opportunities they deserve. OJT Connect plays a critical role in bridging the gap and providing equal opportunities, ensuring that those who were previously overlooked have a chance to thrive in their careers.</Typography>
                                 </div>
                             </Grid>
                             <Hidden mdDown>
@@ -158,7 +161,38 @@ const LandingPage = () => {
             </Grid>
         </Box>
 
-        <Box sx={{ height: '110vh', backgroundColor: '#FD9F5A' }}>
+        <Box sx={{ height: 'auto', backgroundColor: '#FFFCF2', padding: '10vh' }}>
+            <Grid container>
+                <Grid item lg={10} md={10} sm={10} xs={10} sx={{ margin: 'auto' }}>
+                    <Grid container sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <Grid className='inter-font' item lg={6} md={6} sm={10} xs={10} padding='50px'>
+                            <Typography variant='h6' sx={{ color: '#F26822', fontWeight: '700', textAlign: 'center' }} >Students</Typography>
+                            <Typography className='fourth-content' variant='subtitle2'>Create foundational connections with businesses and explore fantastic opportunities.</Typography>
+                        </Grid>
+                        <Grid className='inter-font' item lg={6} md={6} sm={10} xs={10} padding='50px'>
+                            <Typography variant='h6' sx={{ color: '#F26822', fontWeight: '700', textAlign: 'center' }} >Businesses</Typography>
+                            <Typography className='fourth-content' variant='subtitle2'>Post your job opportunities to our job board and connect with amazing students.</Typography>
+                        </Grid>
+                    </Grid>
+                    <Grid container sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <Grid className='inter-font discover_content' item lg={4} md={4} sm={10} xs={10} padding='50px'>
+                            <img src={messaging_icon} alt="logo" style={{ width: '55px', height: '55px' }} />
+                            <Typography variant='h6' sx={{ color: '#F26822', fontWeight: '700', textAlign: 'center' }} >Direct Messaging</Typography>
+                            <Typography className='fourth-content' variant='subtitle2'>Get in direct contact with students and businesses with our private messaging system.</Typography>
+                        </Grid>
+                        <Grid className='inter-font discover_content' item lg={4} md={4} sm={10} xs={10} padding='50px'>
+                            <img src={laptoplist_icon} alt="logo" style={{ width: '55px', height: '55px' }} />
+                            <Typography variant='h6' sx={{ color: '#F26822', fontWeight: '700', textAlign: 'center' }} >Job Board</Typography>
+                            <Typography className='fourth-content' variant='subtitle2'>Post or browse job listings for OJT programs.</Typography>
+                        </Grid>
+                        <Grid className='inter-font discover_content' item lg={4} md={4} sm={10} xs={10} padding='50px'>
+                            <img src={verified_icon} alt="logo" style={{ width: '55px', height: '55px' }} />
+                            <Typography variant='h6' sx={{ color: '#F26822', fontWeight: '700', textAlign: 'center' }} >Verified Businesses</Typography>
+                            <Typography className='fourth-content' variant='subtitle2'>All business accounts go through a screening process in order to verify accounts.</Typography>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
             <Grid container>
                 <Grid item lg={8} md={6} sm={10} sx={{ margin: 'auto' }}>
                     <img
@@ -169,37 +203,6 @@ const LandingPage = () => {
                         src={building}
                         alt="building"
                     />
-                </Grid>
-            </Grid>
-
-            <Grid container>
-                <Grid item lg={8} md={8} sm={10} sx={{ margin: 'auto' }}>
-                    <Grid container spacing={8}>
-                        <Grid className='inter-font' item lg={4} md={4} sm={2}>
-                            <Typography variant='h6' sx={{ color: '#fff', fontWeight: '700', textAlign: 'center' }} >Ut sint unde est commodi neque</Typography>
-                            <Typography className='fourth-content' variant='subtitle2'>Lorem ipsum dolor sit amet. Sed quia nostrum ut vero unde ut laboriosam omnis est voluptas quibusdam aut iste esse ex ullam molestiae ut blanditiis doloremque. Sit nulla facilis et quam aspernatur aut mollitia voluptate ut vmodi voluptates! Et obcaecati iste qui atque dolore ut vero velit aut obcaecati repudiandae.</Typography>
-                        </Grid>
-                        <Grid className='inter-font' item lg={4} md={4} sm={2}>
-                            <Typography variant='h6' sx={{ color: '#fff', fontWeight: '700', textAlign: 'center' }} >Ut sint unde est commodi neque</Typography>
-                            <Typography className='fourth-content' variant='subtitle2'>Lorem ipsum dolor sit amet. Sed quia nostrum ut vero unde ut laboriosam omnis est voluptas quibusdam aut iste esse ex ullam molestiae ut blanditiis doloremque. Sit nulla facilis et quam aspernatur aut mollitia voluptate ut vmodi voluptates! Et obcaecati iste qui atque dolore ut vero velit aut obcaecati repudiandae.</Typography>
-                        </Grid>
-                        <Grid className='inter-font' item lg={4} md={4} sm={2}>
-                            <Typography variant='h6' sx={{ color: '#fff', fontWeight: '700', textAlign: 'center' }} >Ut sint unde est commodi neque</Typography>
-                            <Typography className='fourth-content' variant='subtitle2'>Lorem ipsum dolor sit amet. Sed quia nostrum ut vero unde ut laboriosam omnis est voluptas quibusdam aut iste esse ex ullam molestiae ut blanditiis doloremque. Sit nulla facilis et quam aspernatur aut mollitia voluptate ut vmodi voluptates! Et obcaecati iste qui atque dolore ut vero velit aut obcaecati repudiandae.</Typography>
-                        </Grid>
-                        <Grid className='inter-font' item lg={4} md={4} sm={2}>
-                            <Typography variant='h6' sx={{ color: '#fff', fontWeight: '700', textAlign: 'center' }} >Ut sint unde est commodi neque</Typography>
-                            <Typography className='fourth-content' variant='subtitle2'>Lorem ipsum dolor sit amet. Sed quia nostrum ut vero unde ut laboriosam omnis est voluptas quibusdam aut iste esse ex ullam molestiae ut blanditiis doloremque. Sit nulla facilis et quam aspernatur aut mollitia voluptate ut vmodi voluptates! Et obcaecati iste qui atque dolore ut vero velit aut obcaecati repudiandae.</Typography>
-                        </Grid>
-                        <Grid className='inter-font' item lg={4} md={4} sm={2}>
-                            <Typography variant='h6' sx={{ color: '#fff', fontWeight: '700', textAlign: 'center' }} >Ut sint unde est commodi neque</Typography>
-                            <Typography className='fourth-content' variant='subtitle2'>Lorem ipsum dolor sit amet. Sed quia nostrum ut vero unde ut laboriosam omnis est voluptas quibusdam aut iste esse ex ullam molestiae ut blanditiis doloremque. Sit nulla facilis et quam aspernatur aut mollitia voluptate ut vmodi voluptates! Et obcaecati iste qui atque dolore ut vero velit aut obcaecati repudiandae.</Typography>
-                        </Grid>
-                        <Grid className='inter-font' item lg={4} md={4} sm={2}>
-                            <Typography variant='h6' sx={{ color: '#fff', fontWeight: '700', textAlign: 'center' }} >Ut sint unde est commodi neque</Typography>
-                            <Typography className='fourth-content' variant='subtitle2'>Lorem ipsum dolor sit amet. Sed quia nostrum ut vero unde ut laboriosam omnis est voluptas quibusdam aut iste esse ex ullam molestiae ut blanditiis doloremque. Sit nulla facilis et quam aspernatur aut mollitia voluptate ut vmodi voluptates! Et obcaecati iste qui atque dolore ut vero velit aut obcaecati repudiandae.</Typography>
-                        </Grid>
-                    </Grid>
                 </Grid>
             </Grid>
         </Box>

@@ -40,8 +40,8 @@ li {
 }
 
 .fourth-content {
-    color: #fff;
-    text-align: justify;
+    color: #000;
+    text-align: center;
 }
 
 .footer {
@@ -54,6 +54,10 @@ li {
     width: 50px;
     height: 50px;
     margin: 0 20px;
+}
+
+.discover_content {
+    text-align: center;
 }
 
 /* MD Screens */
