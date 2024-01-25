@@ -224,7 +224,7 @@ const LandingPage = () => {
                     </Grid>
                 </Grid>
                 <Grid container>
-                    <Grid item lg={8} md={6} sm={10} sx={{ margin: 'auto' }}>
+                    <Grid item lg={10} md={10} sm={10} xs={10} sx={{ margin: 'auto' }}>
                         <img
                             style={{
                                 width: '100%',
@@ -248,10 +248,10 @@ const LandingPage = () => {
                     <Hidden mdDown>
                         <Grid item lg={10} md={10} sx={{ margin: "auto", textAlign: 'center' }}>
                             <ul className='inter-font footer'>
-                                <li className='footer-link'>Home</li>
-                                <li className='footer-link'>About</li>
-                                <li className='footer-link'>Discover</li>
-                                <li className='footer-link'>Contact Us</li>
+                                <li><ScrollLink to='home_section' smooth={true} duration={1000}><a className='nav-link' href='#'>Home</a></ScrollLink></li>
+                                <li><ScrollLink to='about_section' smooth={true} duration={1000}><a className='nav-link' href='#'>About</a></ScrollLink></li>
+                                <li><ScrollLink to='discover_section' smooth={true} duration={1000}><a className='nav-link' href='#'>Discover</a></ScrollLink></li>
+                                <li><ScrollLink to='contact_section' smooth={true} duration={1000}><a className='nav-link' href='#'>Contact Us</a></ScrollLink></li>
                             </ul>
                         </Grid>
                     </Hidden>
