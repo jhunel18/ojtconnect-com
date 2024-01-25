@@ -1,39 +1,64 @@
-import React, { useState } from 'react'
-import { Box, Typography, Button, Grid, Hidden } from '@mui/material'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Box, Typography, Button, Grid, Hidden } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Menu, MenuItem } from '@mui/material';
 
 
 // Images
-import bg from '../assets/landingBackground1.png'
-import logo from '../assets/Logo.png'
-import title from '../assets/title.png'
-import thirdbg from '../assets/sec3Background.png'
-import thirdperson from '../assets/sec3Person.png'
-import building from '../assets/building.png'
-import facebook from '../assets/icons/facebook.png'
-import google from '../assets/icons/googleplus.png'
-import instagram from '../assets/icons/instagram.png'
-import pinterest from '../assets/icons/pinterest.png'
-import twitter from '../assets/icons/twitter.png'
-import verified_icon from '../assets/icons/verified_icon.png'
-import laptoplist_icon from '../assets/icons/laptoplist_icon.png'
-import messaging_icon from '../assets/icons/messaging_icon.png'
+import bg from '../assets/landingBackground1.png';
+import logo from '../assets/Logo.png';
+import title from '../assets/title.png';
+import thirdbg from '../assets/sec3Background.png';
+import thirdperson from '../assets/sec3Person.png';
+import building from '../assets/building.png';
+import facebook from '../assets/icons/facebook.png';
+import google from '../assets/icons/googleplus.png';
+import instagram from '../assets/icons/instagram.png';
+import pinterest from '../assets/icons/pinterest.png';
+import twitter from '../assets/icons/twitter.png';
+import verified_icon from '../assets/icons/verified_icon.png';
+import laptoplist_icon from '../assets/icons/laptoplist_icon.png';
+import messaging_icon from '../assets/icons/messaging_icon.png';
 
 // CSS
-import './LandingPage.css'
+import './LandingPage.css';
 
 const LandingPage = () => {
 
-    const [anchorEl, setAnchorEl] = useState(null)
+    const [anchorEl, setAnchorEl] = useState(null);
+    const [isHovered, setIsHovered] = useState(false);
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+    };
+
+    const buttonStyle = {
+        cursor: 'pointer',
+        backgroundColor: isHovered ? '#F1E5E5' : '#F26822',
+        color: isHovered ? '#F26822' : '#F1E5E5',
+        borderRadius: '30px',
+        border: '3px solid #F26822',
+        padding: '10px 30px',
+        fontSize: '1.5rem',
+        fontWeight: '600',
+        width: '200px',
+        boxShadow: '-5px 5px 10px #8b8b8b, 5px -5px 10px #ffffff',
+        marginLeft: 'auto',
+        transition: '0.2s ease'
+    }
 
     const handleMenuClick = (event) => {
-        setAnchorEl(event.currentTarget)
+        setAnchorEl(event.currentTarget);
     }
 
     const handleMenuClose = (event) => {
-        setAnchorEl(null)
+        setAnchorEl(null);
     }
 
     return (<>
@@ -105,9 +130,9 @@ const LandingPage = () => {
 
             <Grid container spacing={2} sx={{ alignItems: 'center' }}>
                 <Grid className='section-sign-up' item lg={12} md={12} sm={12} xs={12} sx={{ marginTop: '3em', textAlign: 'right' }}>
-                    <button className='sign-up-btn' style={{ backgroundColor: '#F26822', color: '#fff', borderRadius: '30px', border: '0', padding: '10px 30px', fontSize: '1.5rem', fontWeight: '600', width: '200px', boxShadow: '-5px 5px 10px #8b8b8b, 5px -5px 10px #ffffff', marginLeft: 'auto' }}>
+                    <Link to="/login"><button className='sign-up-btn' style={buttonStyle} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                         SIGN UP
-                    </button>
+                    </button></Link>
                 </Grid>
             </Grid>
         </Box>
@@ -122,19 +147,20 @@ const LandingPage = () => {
 
         <Box
             sx={{
-                height: '90vh',
+                height: '100%',
                 background: `url(${thirdbg})`,
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 display: 'flex',
-                alignItems: 'center'
+                alignItems: 'center',
+                padding: '60px 0'
             }}>
 
             <Grid container spacing={2}>
-                <Grid item lg={8} md={10} sx={{ margin: 'auto' }}>
-                    <div style={{ width: '100%', height: '70vh', background: '#FD9F5A', borderRadius: '25px', boxShadow: '8px 8px 16px #bebebe, -8px -8px 16px #ffffff' }}>
+                <Grid item lg={8} md={10} sm={10} xs={10} sx={{ margin: 'auto' }}>
+                    <div style={{ width: '100%', height: 'auto', background: '#FD9F5A', borderRadius: '25px', boxShadow: '8px 8px 16px #bebebe, -8px -8px 16px #ffffff' }}>
                         <Grid className='' container>
-                            <Grid item lg={6} md={6} sm={12} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
+                            <Grid item lg={6} md={6} sm={12} xs={12} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff' }}>
                                 <div style={{ padding: '30px' }}>
                                     <Typography variant='h5' sx={{ fontWeight: '700', margin: '20px' }}>ABOUT OJT CONNECT</Typography>
                                     <Typography variant='subtitle2' sx={{ margin: '20px', lineHeight: '20px', fontWeight: '600' }}>OJT connect is an essential platform that facilitates connections between college students and graduates from rural areas of the Philippines with companies, both locally and abroad. By providing valuable work experience opportunities, OJT Connect helps these individuals enhance their resumes and increase their chances of securing employment after graduation</Typography>
@@ -146,8 +172,7 @@ const LandingPage = () => {
                                     <img
                                         style={{
                                             width: '100%',
-                                            height: '70vh',
-                                            objectFit: 'cover',
+                                            height: '100%',
                                             borderRadius: '0 25px 25px 0',
                                         }}
                                         src={thirdperson}
@@ -209,19 +234,21 @@ const LandingPage = () => {
 
         <Box sx={{ height: '30vh', backgroundColor: '#FFFCF2', padding: '40px' }}>
             <Grid container>
-                <Grid item lg={10} md={10} sx={{ margin: 'auto', textAlign: 'center' }}>
+                <Grid item lg={10} md={10} sm={10} sx={{ margin: 'auto', textAlign: 'center' }}>
                     <img src={logo} alt="logo" style={{ width: '100px', height: '100px' }} />
                     <Typography variant='subtitle2' sx={{ color: '#1E1E1E', padding: '10px' }}>OJT Connect</Typography>
                 </Grid>
-                <Grid item lg={10} md={10} sx={{ margin: "auto", textAlign: 'center' }}>
-                    <ul className='inter-font footer'>
-                        <li className='footer-link'>Home</li>
-                        <li className='footer-link'>About</li>
-                        <li className='footer-link'>Discover</li>
-                        <li className='footer-link'>Contact Us</li>
-                    </ul>
-                </Grid>
-                <Grid item lg={10} md={10} sx={{ margin: "auto", textAlign: 'center' }}>
+                <Hidden mdDown>
+                    <Grid item lg={10} md={10} sx={{ margin: "auto", textAlign: 'center' }}>
+                        <ul className='inter-font footer'>
+                            <li className='footer-link'>Home</li>
+                            <li className='footer-link'>About</li>
+                            <li className='footer-link'>Discover</li>
+                            <li className='footer-link'>Contact Us</li>
+                        </ul>
+                    </Grid>
+                </Hidden>
+                <Grid item lg={10} md={10} sm={12} xs={12} sx={{ margin: "auto", textAlign: 'center' }}>
                     <img className='icon' src={facebook} alt="facebook" />
                     <img className='icon' src={google} alt="google" />
                     <img className='icon' src={instagram} alt="instagram" />

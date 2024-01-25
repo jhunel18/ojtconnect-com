@@ -35,6 +35,10 @@ li {
     color: #000;
 }
 
+.nav-link:hover {
+    color: #FD9F5A;
+}
+
 .tagline {
     color: #FD9F5A;
 }
