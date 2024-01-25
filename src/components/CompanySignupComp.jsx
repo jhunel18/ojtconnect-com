@@ -20,7 +20,7 @@ const CompanySignupComp = ({setShowLogin}) => {
         Welcome to <span style={{color: '#F26822'}}>OJT Connect</span>
       </Typography>
       <Typography variant='body2' fontWeight={'bolder'} mt={0} mb={2}>
-        Let's Get Started! <span style={{textDecoration: 'underline', cursor: 'pointer'}} onClick={handleSetShowLogin}>Login here.</span>
+        Let's Get Started! <span style={{textDecoration: 'underline',color:'#F26822', cursor: 'pointer'}} onClick={handleSetShowLogin}>Login here.</span>
       </Typography>
 
       <Box sx={{display:'flex', flexDirection:'column', alignItems:'center'}}>
