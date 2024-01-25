@@ -105,10 +105,10 @@ const LandingPage = () => {
                                 anchorEl={anchorEl}
                                 open={Boolean(anchorEl)}
                                 onClose={handleMenuClose}>
-                                <MenuItem onClick={handleMenuClose}>HOME</MenuItem>
-                                <MenuItem onClick={handleMenuClose}>ABOUT</MenuItem>
-                                <MenuItem onClick={handleMenuClose}>DISCOVER</MenuItem>
-                                <MenuItem onClick={handleMenuClose}>CONTACT US</MenuItem>
+                                <MenuItem className='dropdown' onClick={handleMenuClose}>HOME</MenuItem>
+                                <MenuItem className='dropdown' onClick={handleMenuClose}>ABOUT</MenuItem>
+                                <MenuItem className='dropdown' onClick={handleMenuClose}>DISCOVER</MenuItem>
+                                <MenuItem className='dropdown' onClick={handleMenuClose}>CONTACT US</MenuItem>
                             </Menu>
                         </div>
                     </Hidden>
