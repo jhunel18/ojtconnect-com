@@ -18,7 +18,7 @@ const LoginComp = ({ setShowLogin }) => {
       Welcome to <span style={{color: '#F26822'}}>OJT Connect</span>
     </Typography>
     <Typography variant='body2' fontWeight={'bolder'} mt={0} mb={3}>
-      Let's Get Started! <span style={{textDecoration: 'underline', cursor: 'pointer'}} onClick={handleSetShowLogin}>Signup here.</span>
+      Let's Get Started! <span style={{textDecoration: 'underline', color:'#F26822', cursor: 'pointer'}} onClick={handleSetShowLogin}>Signup here.</span>
     </Typography>
     <Box>
       <form onSubmit={() => console.log("test")}>
