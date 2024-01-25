@@ -211,15 +211,14 @@ const LandingPage = () => {
             <Grid container>
                 <Grid item lg={10} md={10} sx={{ margin: 'auto', textAlign: 'center' }}>
                     <img src={logo} alt="logo" style={{ width: '100px', height: '100px' }} />
-                    <Typography variant='subtitle2' sx={{ color: '#1E1E1E' }}>OJT Connect Tagline Here</Typography>
+                    <Typography variant='subtitle2' sx={{ color: '#1E1E1E', padding: '10px' }}>OJT Connect</Typography>
                 </Grid>
                 <Grid item lg={10} md={10} sx={{ margin: "auto", textAlign: 'center' }}>
                     <ul className='inter-font footer'>
                         <li className='footer-link'>Home</li>
-                        <li className='footer-link'>Services</li>
-                        <li className='footer-link'>Article</li>
-                        <li className='footer-link'>Contact</li>
-                        <li className='footer-link'>About Us</li>
+                        <li className='footer-link'>About</li>
+                        <li className='footer-link'>Discover</li>
+                        <li className='footer-link'>Contact Us</li>
                     </ul>
                 </Grid>
                 <Grid item lg={10} md={10} sx={{ margin: "auto", textAlign: 'center' }}>
