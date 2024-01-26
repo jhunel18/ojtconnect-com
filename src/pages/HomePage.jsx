@@ -1,4 +1,5 @@
 import React, { useEffect,useState } from 'react'
+import { useLocation } from 'react-router'
 import { Box }        from '@mui/material'
 import LoginComp      from '../components/LoginComp'
 import SignupComp     from '../components/SignupComp'
@@ -6,13 +7,14 @@ import ImageContainer from '../shared/components/ImageContainer'
 import bg             from "../assets/login.png"
 import CompanyImage   from '../assets/company.png'
 import Logo           from '../assets/Logo.png'
+import VerificationComp from '../components/VerificationComp'
 import './HomePage.css'
 const HomePage = () => {
     const [showLogin, setShowLogin] = useState(true)
     const [activeToggle, setActiveToggle]  = useState('student');
     const [is_ShowStudent, setShowStudent] = useState(false);
     const [is_ShowCompany, setShowCompany] = useState(false);
-
+    const currentRoute = useLocation()
     const [windowWidth, setWindowWidth]    = useState(window.innerWidth);
 
     const handleToggle = (toggle) => {
@@ -22,7 +24,7 @@ const HomePage = () => {
       
         if (toggle === 'student') setShowStudent(true);
         else if (toggle === 'company') setShowCompany(true);
-      };
+    };
 
     const handleShowLogin = () => (
         setShowLogin(false)
@@ -32,12 +34,12 @@ const HomePage = () => {
       const handleResize = () => {
         setWindowWidth(window.innerWidth);
       };
-  
       window.addEventListener('resize', handleResize);
   
       return () => {
         window.removeEventListener('resize', handleResize);
       };
+
     }, []);
   
     const shouldShowImage = windowWidth > 800;
@@ -45,8 +47,8 @@ const HomePage = () => {
     return (<>
         <Box sx={{
             display:'flex', 
-            height:'100vh' 
-            ,width:'100%',  
+            height:'100vh',
+            width:'100%',  
             alignItems:'center',
             justifyContent:'center',
             background: "linear-gradient(146deg, rgba(255,151,85,1) 0%, rgba(255,255,255,1) 54%, rgba(254,179,139,1) 100%)"
@@ -70,7 +72,9 @@ const HomePage = () => {
                 )}
 
                 <Box className='form-container'>
-                    {showLogin 
+                    {currentRoute.pathname.includes('/verified') ? 
+                        <VerificationComp />
+                    : showLogin 
                     ? <LoginComp setShowLogin={setShowLogin}/> 
                     : <SignupComp 
                         setShowLogin={setShowLogin} 
