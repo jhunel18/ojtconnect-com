@@ -1,4 +1,3 @@
-// data/initialData.js
 export const conversations = [
     { id: 1, contactName: "John Doe", unread: 2, onlineText: "About a minute ago" },
     { id: 2, contactName: "Juan Dela Cruz", unread: 0, onlineText: "About a minute ago" },
