@@ -6,6 +6,7 @@ import SignupComp     from '../components/SignupComp'
 import ImageContainer from '../shared/components/ImageContainer'
 import bg             from "../assets/login.png"
 import CompanyImage   from '../assets/company.png'
+import CompanyImage2   from '../assets/company2.png'
 import Logo           from '../assets/Logo.png'
 import VerificationComp from '../components/VerificationComp'
 import './HomePage.css'
@@ -60,7 +61,7 @@ const HomePage = () => {
                  {showLogin && shouldShowImage && (
 
                     <img className='img_slider'
-                         src={bg} width={"50%"} 
+                         src={currentRoute.pathname.includes('/verified/company') ? CompanyImage2 : bg} width={"30%"} 
                     />   
                  )}
 

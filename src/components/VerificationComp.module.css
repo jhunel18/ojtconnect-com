@@ -3,3 +3,11 @@
 .league-spartan-font {
     font-family: "League Spartan", sans-serif;
 }
+
+@media screen and (max-width: 600px) {
+     
+    .verifiedBtn{
+        width: 60%;;
+    }
+
+}

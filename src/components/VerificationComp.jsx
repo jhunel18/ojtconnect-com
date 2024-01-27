@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box, Typography }  from '@mui/material';
 import TextBoxFullWidthComp from '../shared/components/TextBoxFullWidthComp'
 import CheckboxComp         from '../shared/components/CheckboxComp';
@@ -13,17 +13,50 @@ const VerificationComp = () => {
                 textAlign: 'center',
                 marginTop: '30px',
                 fontWeight: 'bold',
-                fontSize: '20px'
+                fontSize: '20px',
+                color: '#474A4E'
             }}
         >
             Thank you for signing up for OJT Connect. You can now access the site and connect with talented students.
         </p>
     )
+
+    useEffect(() => {
+        setText(
+            <>
+                <p
+                    className={`${style["league-spartan-font"]}`}
+                    style={{
+                        textAlign: 'center',
+                        marginTop: '30px',
+                        fontWeight: 'bold',
+                        fontSize: '20px',
+                        color: '#474A4E'
+                    }}
+                >
+                    Thank you for signing up for OJT Connect.
+                </p>
+                <p
+                    className={`${style["league-spartan-font"]}`}
+                    style={{
+                        textAlign: 'center',
+                        marginTop: '30px',
+                        fontWeight: 'bold',
+                        fontSize: '20px',
+                        color: '#474A4E'
+                    }}
+                >
+                    Please allow <span style={{color: '#F26822'}}>24 hours</span> for your account to be verified before creating job listings.
+                </p>
+            </>
+            
+        )
+    }, [])
     return (
         <>
         <Box
             m={'20px'}
-            sx={{textAlign: 'center'}}
+            sx={{textAlign: 'center', width: '100%'}}
         >
             <CheckCircleOutlineOutlinedIcon sx={{color: '#F26822', fontSize: '100px'}}/>
         </Box>
@@ -55,7 +88,7 @@ const VerificationComp = () => {
                 mt: '50px'
             }}
         >
-            <ButtonContainedComp label={"Continue to site"} width={"70%"}/>
+            <ButtonContainedComp label={"Continue to site"} width={"80%"} className={style['verifiedBtn']}/>
         </Box>
         
         </>
