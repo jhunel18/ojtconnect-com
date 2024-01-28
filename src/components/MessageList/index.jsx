@@ -1,5 +1,5 @@
 import { Avatar, Badge, Box, Card, CardContent, CardHeader, Divider, Grid, List, ListItemButton, ListItemText, Stack, ToggleButton, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectConversation, filterAllMessages, filterUnreadMessages, resetUnreadMessages } from '../../redux/actions/messagesActions'
 import { Style } from './style'
@@ -33,10 +33,28 @@ const MessagesList = () => {
     };
 
     const [isHovered, setIsHovered] = useState(false);
+
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth <= 600); 
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
     
     return(
         <>
-            <Card sx={{ flex: "1", borderRadius: "20px", margin: "0", overflow: "hidden" }}>
+            <Card sx={{ 
+                flex: "1", 
+                borderRadius: isSmallScreen ? '0' : '20px',
+                margin: "0", 
+                overflow: "hidden" 
+            }}>
                 <CardHeader 
                     sx={Style.CardHeader}
                     titleTypographyProps={Style.CardHeaderTitle}
