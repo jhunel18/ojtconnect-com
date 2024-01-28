@@ -1,10 +1,16 @@
-import { Avatar, Box, Card, CardActions, CardContent, CardHeader, Divider, IconButton, InputAdornment, List, ListItem, TextField, Typography } from '@mui/material'
-import React from 'react'
+import { Avatar, Box, Card, CardActions, CardContent, CardHeader, Divider, Hidden, IconButton, InputAdornment, List, ListItem, TextField, Typography } from '@mui/material'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import SendIcon from '@mui/icons-material/Send';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
+const BackButton = ({ onClick }) => (
+    <IconButton onClick={onClick} sx={{ color: '#FD9F5A' }}>
+        <ArrowBackIcon />
+    </IconButton>
+);
 
-const MessageConversation = () => {
+const MessageConversation = ({ onBackButtonClick }) => {
     const selectedConversationId = useSelector((state) => state.messages.selectedConversationId);
     const conversations = useSelector((state) => state.messages.conversations);
     const messages = useSelector((state) => state.messages.messages);
@@ -16,13 +22,35 @@ const MessageConversation = () => {
     // Extract the contact name from the selected conversation
     const contactName = selectedConversation ? selectedConversation.contactName : '';
 
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth <= 600); 
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     return (
         <>
             {selectedConversationId ? (
-                <Card sx={{ display: 'flex', flexDirection: 'column', height: '100%', borderRadius: "20px", font: "inherit" }}>
+                <Card sx={{ 
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    height: '100%', 
+                    borderRadius: isSmallScreen ? '0' : '20px', 
+                    font: "inherit" 
+                }}>
+                    <Hidden mdUp>
+                        <Box sx={{ position: 'absolute', top: '14px', left: '10px', zIndex: 1 }}>
+                            <BackButton onClick={onBackButtonClick} />
+                        </Box>
+                    </Hidden>
                     <CardHeader 
-                        sx={{paddingLeft: "40px"}}
+                        sx={{paddingLeft: isSmallScreen ? '50px' : "40px"}}
                         avatar={
                             <Avatar sx={{ bgcolor: "#D9D9D9" }} aria-label="recipe">
                                 J

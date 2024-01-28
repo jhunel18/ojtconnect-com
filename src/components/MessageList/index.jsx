@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectConversation, filterAllMessages, filterUnreadMessages, resetUnreadMessages } from '../../redux/actions/messagesActions'
 import { Style } from './style'
+import MessageConversation from '../MessageConversation'
 
 const MessagesList = () => {
     const conversations = useSelector((state) => state.messages.conversations)
@@ -10,12 +11,16 @@ const MessagesList = () => {
     const selectedConversationId = useSelector((state) => state.messages.selectedConversationId);
     const messages = useSelector((state) => state.messages.messages);
     const dispatch = useDispatch();
+    const [isHovered, setIsHovered] = useState(false);
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+    const [selectedMessage, setSelectedMessage] = useState(null);
 
     const handleConversationClick = (conversationId, unread) => {
         dispatch(selectConversation(conversationId));
         if (unread > 0) {
             dispatch(resetUnreadMessages(conversationId));
         }
+        setSelectedMessage(conversationId);
     };
 
     const handleFilterAll = () => {
@@ -32,10 +37,6 @@ const MessagesList = () => {
         return lastMessage ? lastMessage.text : '';
     };
 
-    const [isHovered, setIsHovered] = useState(false);
-
-    const [isSmallScreen, setIsSmallScreen] = useState(false);
-
     useEffect(() => {
         const handleResize = () => {
             setIsSmallScreen(window.innerWidth <= 600); 
@@ -46,6 +47,10 @@ const MessagesList = () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
+    const handleSelectedMessage = (messageId) => {
+        setSelectedMessage(messageId);
+    };
     
     return(
         <>
@@ -195,6 +200,9 @@ const MessagesList = () => {
                     </List>
                 </CardContent>
             </Card>
+            {isSmallScreen && selectedMessage && (
+                <MessageConversation selectedConversationId={selectedMessage} onBackButtonClick={() => handleSelectedMessage(null)} />
+            )}
         </>
     )
 }

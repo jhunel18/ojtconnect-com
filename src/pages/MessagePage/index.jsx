@@ -1,11 +1,16 @@
 import { Box, Container, Grid, Hidden } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import MessagesList from "../../components/MessageList";
 import MessageConversation from "../../components/MessageConversation";
 import Notifications from "../../components/Notifications";
 import bgImg from '../../assets/MAINBGbg.png'
 
 const MessagePage = () => {
+    const [selectedMessage, setSelectedMessage] = useState(null);
+
+    const handleSelectedMessage = (messageId) => {
+        setSelectedMessage(messageId);
+    };
     return(
         <Grid container spacing={0}>
             <Hidden smDown mdDown>
@@ -78,14 +83,16 @@ const MessagePage = () => {
                     <Box>
                         <Grid>
                             <Grid item xs={12}>
-                                <Box  sx={{display: 'flex', flexDirection: 'column', height: '100vh' }}>
-                                    <MessagesList />
+                                <Box sx={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+                                    <MessagesList onMessageClick={handleSelectedMessage} />
+                                    {selectedMessage && <MessageConversation onBackButtonClick={() => handleSelectedMessage(null)} />}
                                 </Box>
                             </Grid>
                         </Grid>
                     </Box>
                 </Grid>
             </Hidden>
+
             
         </Grid>
     )
