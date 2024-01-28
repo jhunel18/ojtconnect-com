@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import SendIcon from '@mui/icons-material/Send';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import MessageBubble from './MessageBubble';
+import { customScrollbar } from './style'
 
 const BackButton = ({ onClick }) => (
     <IconButton onClick={onClick} sx={{ color: '#FD9F5A' }}>
@@ -70,16 +72,32 @@ const MessageConversation = ({ onBackButtonClick }) => {
                         subheader="Online Now"
                     />
                     <Divider sx={{boxShadow: 1,  margin: '0 25px',}}/>
-                    <CardContent sx={{ flex: 1, overflowY: 'auto' }}>
+                    <CardContent 
+                        sx={{
+                            flex: 1, 
+                            overflowY: 'auto', 
+                            padding: "0px",
+                            ...customScrollbar
+                            // '&:hover': {
+                            //     backgroundColor: '#0000',
+                            //     overflowY: 'scroll',
+                            // },
+                            // '&::-webkit-scrollbar': {
+                            //     width: '12px',
+                            // },
+                            // '&::-webkit-scrollbar-track': {
+                            //     backgroundColor: '#FFF0E7',
+                            // },
+                            // '&::-webkit-scrollbar-thumb': {
+                            //     backgroundColor: '#FF9E6C',
+                            //     borderRadius: '6px',
+                            //     transition: 'overflow 0.5s ease', 
+                            // },
+                        }}>
                         <List>
-                            <Box>
-                                {selectedConversationMessages.map((message) => (
-                                    <ListItem key={message.id}>
-                                        <Typography variant='body1'>{message.sender}: </Typography>
-                                        <Typography variant='body2'> {message.text}</Typography>
-                                    </ListItem>
-                                ))}
-                            </Box>
+                            {selectedConversationMessages.map((message) => (
+                                <MessageBubble key={message.id} message={message} isYou={message.sender === 'You'} />
+                            ))}
                         </List>
                     </CardContent>
                     <CardActions sx={{ mt: 'auto', p: 2 }}>
