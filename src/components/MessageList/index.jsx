@@ -36,7 +36,7 @@ const MessagesList = () => {
     
     return(
         <>
-            <Card sx={{ display: 'flex', flexDirection: 'column', height: '100%', borderRadius: "20px" }}>
+            <Card sx={{ flex: "1", borderRadius: "20px", margin: "0", overflow: "hidden" }}>
                 <CardHeader 
                     sx={Style.CardHeader}
                     titleTypographyProps={Style.CardHeaderTitle}
@@ -62,7 +62,13 @@ const MessagesList = () => {
                 </Stack>
                 <Divider sx={{boxShadow: 1}}/>
                 <CardContent 
-                    sx={Style.cardContentScrollbarStyle}
+                    sx={{
+                        ...Style.cardContentScrollbarStyle,
+                        padding: 0,
+                        margin: 0,
+                        overflowY: "auto",
+                        height: '100%'
+                    }}
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
                 >

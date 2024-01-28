@@ -4,10 +4,9 @@ import { configureStore } from '@reduxjs/toolkit';
 
 const store = configureStore({
   reducer: {
-    messages: messagesReducer, // Assuming 'messagesReducer' is the reducer for the 'messages' slice
+    messages: messagesReducer,
     // Add other slices and reducers if needed
   },
-  // Other configurations like middleware, devTools, etc., can be added here if necessary
 });
 
 export default store;
