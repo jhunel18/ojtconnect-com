@@ -14,7 +14,8 @@ const MainLayout = ({children}) => {
             justifyContent:'center',
             backgroundImage: `url(${bg})`,
             backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover'
+            backgroundSize: 'cover',
+            backgroundAttachment: 'fixed'
         }}>
             {children}
         </Box>
