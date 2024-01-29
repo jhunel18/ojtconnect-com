@@ -10,7 +10,7 @@ import SchedulesComp from './components/SchedulesComp'
 import MessageNotifTopComp from './shared/components/MessageNotifTopComp'
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import MessagePage from './pages/MessagePage'
-
+import JobPostPage from './pages/JobPostPage';
 const AppRoutes = () => {
     return (<>
         <Routes>
@@ -24,6 +24,7 @@ const AppRoutes = () => {
             <Route path='/discover' element={<DiscoverComp />} />
             <Route path='/services' element={<ServicesComp />} />
             <Route path='/messages' element={<MessagePage />} />
+            <Route path='/jobs' element={<JobPostPage />} />
         </Routes>
     </>)
 }
