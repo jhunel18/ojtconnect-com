@@ -1,7 +1,6 @@
 import React from 'react'
 import ButtonContainedComp from '../shared/components/ButtonContainedComp'
 import { Typography, Box, Link } from '@mui/material'
-import Grid from '@mui/material/Unstable_Grid2';
 import SignupStudentComp from './SignupComp'
 import TextBoxFullWidthComp from '../shared/components/TextBoxFullWidthComp'
 
