@@ -1,4 +1,5 @@
-import { Avatar, Badge, Box, Card, CardContent, CardHeader, Divider, Grid, List, ListItemButton, ListItemText, Stack, ToggleButton, Typography } from '@mui/material'
+import { Avatar, Badge, Box, Card, CardContent, CardHeader, Divider, List, ListItemButton, ListItemText, Stack, ToggleButton, Typography } from '@mui/material'
+import Grid from '@mui/material/Grid';
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { selectConversation, filterAllMessages, filterUnreadMessages, resetUnreadMessages } from '../../redux/actions/messagesActions'

@@ -1,4 +1,5 @@
-import { Box, Container, Grid, Hidden } from "@mui/material";
+import { Box, Container, Hidden } from "@mui/material";
+import Grid from '@mui/material/Grid';
 import React, { useState } from "react";
 import MessagesList from "../../components/MessageList";
 import MessageConversation from "../../components/MessageConversation";

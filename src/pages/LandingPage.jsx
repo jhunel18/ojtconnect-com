@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink, Element } from 'react-scroll';
 
-import { Box, Typography, Button, Grid, Hidden } from '@mui/material';
+import { Box, Typography, Button, Hidden } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Menu, MenuItem } from '@mui/material';
