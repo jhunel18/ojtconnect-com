@@ -12,6 +12,7 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import MessagePage from './pages/MessagePage'
 import JobPostPage from './pages/JobPostPage';
 import StudentListComp from './components/StudentListComp'
+import NewsFeedPage from "./pages/NewsFeedPage"
 const AppRoutes = () => {
     return (<>
         <Routes>
@@ -27,6 +28,7 @@ const AppRoutes = () => {
             <Route path='/services' element={<ServicesComp />} />
             <Route path='/messages' element={<MessagePage />} />
             <Route path='/jobs' element={<JobPostPage />} />
+            <Route path='/newsfeed' element={<NewsFeedPage />} />
         </Routes>
     </>)
 }
