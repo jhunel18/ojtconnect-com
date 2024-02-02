@@ -16,7 +16,7 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: 600,
   maxHeight: '80vh', 
-  overflowY: 'auto',  
+  overflowY: 'auto',  // Add a scrollbar when content exceeds the height
   backgroundColor: 'background.paper',
   boxShadow: 24,
   padding: '40px',

@@ -15,7 +15,7 @@ const CompanySignupComp = ({setShowLogin}) => {
       setShowLogin(true)
       navigate("/login")
     }
-
+    
     const {state:Modal, 
       setState:setModal,
       toggleState} = useToggle({initialValue:false})
