@@ -8,14 +8,13 @@ const MainLayout = ({children}) => {
   return (<>
       <Box sx={{
             display:'flex', 
-            height:'100%',
             width:'100%',  
             alignItems:'center',
             justifyContent:'center',
             backgroundImage: `url(${bg})`,
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
-            position: 'fixed',
+            backgroundAttachment: 'fixed',
             overflow: 'scroll'
         }}>
             {children}

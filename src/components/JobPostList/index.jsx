@@ -1,13 +1,24 @@
-import React from 'react'
+import React from 'react';
 
-import JobPostCard from './JobPostCard'
-import Grid  from '@mui/material/Grid'
+import JobPostCard from './JobPostCard';
+import JobPostDetails from './JobPostDetails';
+import Grid  from '@mui/material/Grid';
+
+import style from './index.module.css';
 
 const JobPostList = () => {
     return (<>
-        <Grid container>
-            <Grid item lg={3} md={3} sm={3} xs={10}>
+        <Grid container sx={{
+            display: 'flex',
+            justifyContent: 'center'
+        }}>
+            <Grid item lg={3} md={3} sm={3} xs={10} margin={5}>
                 <JobPostCard />
+            </Grid>
+            <Grid item lg={7} md={7} sm={7} margin={5}>
+                <JobPostDetails />
+                <JobPostDetails />
+                <JobPostDetails />
             </Grid>
         </Grid>
     </>)

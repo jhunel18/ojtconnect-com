@@ -2,15 +2,25 @@ import { Box, Typography } from '@mui/material';
 import React from 'react';
 
 const JobPostCard = () => {
-    return (
-        <Box sx={{
+
+    const style = ({
+        card: {
             backgroundColor: '#FDFBFA',
             width: '100%',
             height: 'auto',
             borderRadius: '15px',
             boxShadow: '3px 2px 10px rgba(0, 0, 0, 0.25)',
-            padding: '10px'
-        }}>
+            padding: '10px 5px',
+            margin: '10px',
+            borderLeft: '15px solid transparent',
+            '&:hover': {
+                borderLeft: '15px solid #FFDDC3',
+            }
+        }
+    })
+
+    return (
+        <Box sx={style.card}>
             <div style={{
                 padding: '15px',
                 borderBottom: '1px solid #D5D4DF'
