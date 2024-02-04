@@ -9,6 +9,7 @@ import CalendarComp from './components/CalendarComp'
 import SchedulesComp from './components/SchedulesComp'
 import MessageNotifTopComp from './shared/components/MessageNotifTopComp'
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import SignedInNavigation from './shared/components/SignedInNavigation'
 import MessagePage from './pages/MessagePage'
 import JobPostPage from './pages/JobPostPage';
 import StudentListComp from './components/StudentListComp'
@@ -26,6 +27,7 @@ const AppRoutes = () => {
             <Route path='/verified/:cat/:id' element={<HomePage />} />
             <Route path='/discover' element={<DiscoverComp />} />
             <Route path='/services' element={<ServicesComp />} />
+            <Route path='/navigation' element={<SignedInNavigation />} />
             <Route path='/messages' element={<MessagePage />} />
             <Route path='/jobs' element={<JobPostPage />} />
             <Route path='/newsfeed' element={<NewsFeedPage />} />
