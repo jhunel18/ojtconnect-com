@@ -12,7 +12,7 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 const SignedInNavigation = () => {
   return (
     <>
-    <Box sx ={{backGround:"#FFF", boxShadow:"1px 1px 8px #000", padding:"10px", display:"flex", alignItems:"center", justifyContent:"center"}}>
+    <Box sx ={{backGround:"#FFF", boxShadow:"1px 1px 5px #000", padding:"10px", display:"flex", alignItems:"center", justifyContent:"center"}}>
       <img src="/src/assets/Logo.png" alt="logo" style={{width:"25px", height:"25px", margin:"0px 40px"}}></img>
         <TextBoxWithIcon icon = {<SearchIcon sx={{ color: '#F26822'}}/>} color= "warning" />
         <TextBoxWithIcon icon = {<FmdGoodOutlinedIcon sx={{ color: '#F26822' }} />} color= "warning" />
