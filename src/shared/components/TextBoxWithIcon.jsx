@@ -17,6 +17,7 @@ const TextBoxWithIcon = ({icon, color}) => {
         }}
         variant="outlined"
         color = {color}
+        sx={{margin:"0px 20px", backgroundColor:"#edf3F8"}}
       />
   )
 }
