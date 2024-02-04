@@ -1,0 +1,15 @@
+.job_list {
+    height: 90vh;
+    overflow-y: scroll;
+}
+
+.job_list::-webkit-scrollbar {
+    width: 8px;
+    background-color: #fff;
+}
+
+.job_list::-webkit-scrollbar-thumb {
+    background-color: #FF9E6C;
+    border-radius: 8px;
+}
+
