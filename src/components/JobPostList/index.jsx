@@ -12,7 +12,7 @@ const JobPostList = () => {
             display: 'flex',
             justifyContent: 'center'
         }}>
-            <Grid item lg={3} md={3} sm={3} xs={10} margin={5}>
+            <Grid item lg={4} md={4} sm={4} xs={10} margin={2}>
                 <div className={style.job_list}>
                     <JobPostCard />
                     <JobPostCard />
@@ -23,10 +23,10 @@ const JobPostList = () => {
                     <JobPostCard />
                 </div>
             </Grid>
-            <Grid item lg={7} md={7} sm={7} margin={5}>
-                <JobPostDetails />
-                <JobPostDetails />
-                <JobPostDetails />
+            <Grid item lg={6} md={6} sm={6} margin={2}>
+                <div className={style.job_details}>
+                    <JobPostDetails />
+                </div>
             </Grid>
         </Grid>
     </>)

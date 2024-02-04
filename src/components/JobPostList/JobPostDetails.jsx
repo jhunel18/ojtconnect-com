@@ -5,7 +5,7 @@ const JobPostDetails = () => {
     return (
         <Box sx={{
             backgroundColor: '#FDFBFA',
-            width: '100%',
+            width: 'auto',
             height: 'auto',
             borderRadius: '15px',
             boxShadow: '3px 2px 10px rgba(0, 0, 0, 0.25)',

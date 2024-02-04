@@ -15,6 +15,7 @@ const JobPostCard = () => {
             borderLeft: '15px solid transparent',
             '&:hover': {
                 borderLeft: '15px solid #FFDDC3',
+                cursor: 'pointer'
             }
         }
     })
