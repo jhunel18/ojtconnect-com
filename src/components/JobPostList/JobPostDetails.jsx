@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 
 const JobPostDetails = () => {
     return (
@@ -18,13 +18,9 @@ const JobPostDetails = () => {
                 borderBottom: '1px solid  #D5D4DF',
                 padding: '20px'
             }}>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
+                <Typography variant='h6' sx={{ fontSize: '18px', fontWeight: '600' }}>Position Placeholder</Typography>
+                <Typography variant='subtitle1'>Company Name Placeholder</Typography>
+                <Typography variant='subtitle2' sx={{ fontWeight: '100' }}>Company Address Placeholder</Typography>
             </Box>
             <Box style={{
                 height: 'auto',
