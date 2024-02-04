@@ -19,7 +19,7 @@
     float: right;
 }
 
-li {
+.nav_list {
     display: inline-block;
     text-align: center;
     padding: 16px 22px;
@@ -35,13 +35,17 @@ li {
     color: #000;
 }
 
+.nav-link:hover {
+    color: #FD9F5A;
+}
+
 .tagline {
     color: #FD9F5A;
 }
 
 .fourth-content {
-    color: #fff;
-    text-align: justify;
+    color: #000;
+    text-align: center;
 }
 
 .footer {
@@ -54,6 +58,16 @@ li {
     width: 50px;
     height: 50px;
     margin: 0 20px;
+}
+
+.discover_content {
+    text-align: center;
+}
+
+li.dropdown:hover {
+    background-color: #FD9F5A;
+    color: #fff;
+    transition: 0.2s;
 }
 
 /* MD Screens */

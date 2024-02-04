@@ -4,7 +4,6 @@ import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import SignupToggle from './SignupToggle';
 import StudentSignupComp from './StudentSignupComp';
-import UniversitySignupComp from './UniversitySignupComp';
 import CompanySignupComp from './CompanySignupComp'
 const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
   '& .MuiToggleButtonGroup-grouped': {
@@ -22,7 +21,7 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
   },
 }));
 
-const SignupComp = ({ setShowLogin, activeToggle, is_ShowStudent, is_ShowUniversity, is_ShowCompany, handleToggle }) => {
+const SignupComp = ({ setShowLogin, activeToggle, is_ShowStudent, is_ShowCompany, handleToggle }) => {
   const [alignment, setAlignment] = useState('left');
   const handleAlignment = (event, newAlignment) => {
     setAlignment(newAlignment);
@@ -66,7 +65,6 @@ const SignupComp = ({ setShowLogin, activeToggle, is_ShowStudent, is_ShowUnivers
     </Paper>
     
       {is_ShowStudent && <StudentSignupComp setShowLogin={setShowLogin}/>}
-      {is_ShowUniversity && <UniversitySignupComp setShowLogin={setShowLogin}/>}
       {is_ShowCompany && <CompanySignupComp setShowLogin={setShowLogin}/>}
   </>)
 }

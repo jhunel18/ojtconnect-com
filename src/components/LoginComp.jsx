@@ -1,7 +1,6 @@
 import React from 'react'
 import ButtonContainedComp from '../shared/components/ButtonContainedComp'
-import { Typography, Box } from '@mui/material'
-import Grid from '@mui/material/Unstable_Grid2';
+import { Typography, Box, Link } from '@mui/material'
 import SignupStudentComp from './SignupComp'
 import TextBoxFullWidthComp from '../shared/components/TextBoxFullWidthComp'
 
@@ -18,7 +17,7 @@ const LoginComp = ({ setShowLogin }) => {
       Welcome to <span style={{color: '#F26822'}}>OJT Connect</span>
     </Typography>
     <Typography variant='body2' fontWeight={'bolder'} mt={0} mb={3}>
-      Let's Get Started! <span style={{textDecoration: 'underline', cursor: 'pointer'}} onClick={handleSetShowLogin}>Signup here.</span>
+      Let's Get Started! <span style={{textDecoration: 'underline', color:'#F26822', cursor: 'pointer'}} onClick={handleSetShowLogin}>Signup here.</span>
     </Typography>
     <Box>
       <form onSubmit={() => console.log("test")}>
@@ -26,15 +25,23 @@ const LoginComp = ({ setShowLogin }) => {
         <TextBoxFullWidthComp id={"password"} label={"Password"} size={'small'} type={'password'} margin={"15px 0px"}/>
       </form>
     </Box>
-    <Box sx={{flexGrow: 1}} m={'50px 0 60px 0'}>
-      <Grid container spacing={3} sx={{alignItems: 'stretch'}}>
-        <Grid xs={12} sm={12} md={12} lg={6}>
-          <ButtonContainedComp label={"Login"} width={"100%"}/>
-        </Grid>
-        <Grid xs={12} sm={12} md={12} lg={6}>
-          <ButtonContainedComp label={"Forgot Password"} width={"100%"}/>
-        </Grid>
-      </Grid>
+    <Link
+      component={"button"}
+      variant={"body2"}
+      onClick={() => {
+        console.info("I'm a button.");
+      }}
+      underline='none'
+      sx={{
+        color: '#F26822',
+        fontWeight: '600',
+        fontSize: '14px'
+      }}
+    >
+      Forgot Password?
+    </Link>
+    <Box sx={{flexGrow: 1}} m={'20px 0 60px 0'}>
+      <ButtonContainedComp label={"Login"} width={"100%"}/>
     </Box>
     </>)
 }
