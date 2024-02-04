@@ -8,7 +8,7 @@ const MainLayout = ({children}) => {
   return (<>
       <Box sx={{
             display:'flex', 
-            height:'100vh',
+            minheight:'100vh',
             width:'100%',  
             alignItems:'center',
             justifyContent:'center',

@@ -2,6 +2,20 @@
 export const conversations = [
     { id: 1, contactName: "John Doe", unread: 2, onlineText: "About a minute ago", avatar: "null" },
     { id: 2, contactName: "Juan Dela Cruz", unread: 0, onlineText: "About a minute ago", avatar: "null" },
+    { id: 3, contactName: "John Doe", unread: 2, onlineText: "About a minute ago", avatar: "null" },
+    { id: 4, contactName: "Juan Dela Cruz", unread: 0, onlineText: "About a minute ago", avatar: "null" },
+    { id: 5, contactName: "John Doe", unread: 2, onlineText: "About a minute ago", avatar: "null" },
+    { id: 6, contactName: "Juan Dela Cruz", unread: 0, onlineText: "About a minute ago", avatar: "null" },
+    { id: 7, contactName: "John Doe", unread: 2, onlineText: "About a minute ago", avatar: "null" },
+    { id: 8, contactName: "Juan Dela Cruz", unread: 0, onlineText: "About a minute ago", avatar: "null" },
+    { id: 9, contactName: "John Doe", unread: 2, onlineText: "About a minute ago", avatar: "null" },
+    { id: 10, contactName: "Juan Dela Cruz", unread: 0, onlineText: "About a minute ago", avatar: "null" },
+    { id: 11, contactName: "John Doe", unread: 2, onlineText: "About a minute ago", avatar: "null" },
+    { id: 12, contactName: "Juan Dela Cruz", unread: 0, onlineText: "About a minute ago", avatar: "null" },
+    { id: 13, contactName: "John Doe", unread: 2, onlineText: "About a minute ago", avatar: "null" },
+    { id: 14, contactName: "Juan Dela Cruz", unread: 0, onlineText: "About a minute ago", avatar: "null" },
+    { id: 15, contactName: "John Doe", unread: 2, onlineText: "About a minute ago", avatar: "null" },
+    { id: 16, contactName: "Juan Dela Cruz", unread: 0, onlineText: "About a minute ago", avatar: "null" },
   ]
 export const messages = {
     1: [
@@ -20,4 +34,5 @@ export const messages = {
       { id: 2, text: "Hello! What's up?", sender: "Juan Dela Cruz", timestamp: Date.now() - 4000 },
     ],
   }
+  
 export const selectedConversationId = null

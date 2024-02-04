@@ -44,27 +44,45 @@ export const Style = ({
             padding: "1px 16px"
         }
     },
+    ListItemTextSecondary: {
+      fontSize: "11px",
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      maxWidth: '210px',
+      color: "#FD9F5A"
+    },
+    BoxNotice: {
+      color: "#FD9F5A",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      textAlign: "center",
+      minHeight: "100%" 
+    },
     // Custom Card Content Scroll bar
     cardContentScrollbarStyle: {
-        overflowY: 'auto',
-        p:0, 
+        flex: 1,
+        p: 0,
         '&:last-child': { p: 0 },
-        overflow: "hidden", 
-        '&:hover': {
-            backgroundColor: 'transparent',
-            overflowY: 'scroll',
-            marginRight: '-12px'
-        },
+        overflowY: 'auto',
+        marginRight: '-12px',
+        // '&:hover': {
+        //     overflowY: 'scroll',
+        //     marginRight: '-12px',
+        // },
+        maxHeight: '100%', // Remove or adjust this line
+        height: 'auto', // Add this line to allow dynamic height
         '&::-webkit-scrollbar': {
             width: '12px',
         },
         '&::-webkit-scrollbar-track': {
-        backgroundColor: 'transparent',
+            backgroundColor: 'transparent',
         },
         '&::-webkit-scrollbar-thumb': {
-        backgroundColor: '#0000',
-        borderRadius: '6px',
-        transition: 'overflow 0.5s ease', 
+            backgroundColor: '#0000',
+            borderRadius: '6px',
+            transition: 'overflow 0.5s ease',
         },
     },
     badgeStyle: {

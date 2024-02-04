@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import SendIcon from '@mui/icons-material/Send';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import MessageBubble from './MessageBubble';
-import { customScrollbar } from './style'
+import { Styles, customScrollbar } from './style'
 
 const BackButton = ({ onClick }) => (
     <IconButton onClick={onClick} sx={{ color: '#FD9F5A' }}>
@@ -36,16 +36,11 @@ const MessageConversation = ({ onBackButtonClick }) => {
         };
     }, []);
 
+
     return (
         <>
             {selectedConversationId ? (
-                <Card sx={{ 
-                    display: 'flex', 
-                    flexDirection: 'column', 
-                    height: '100%', 
-                    borderRadius: isSmallScreen ? '0' : '20px', 
-                    font: "inherit" 
-                }}>
+                <Card sx={{...Styles.Card, borderRadius: isSmallScreen ? '0' : '20px'}}>
                     <Hidden mdUp>
                         <Box sx={{ position: 'absolute', top: '14px', left: '10px', zIndex: 1 }}>
                             <BackButton onClick={onBackButtonClick} />
@@ -58,16 +53,8 @@ const MessageConversation = ({ onBackButtonClick }) => {
                                 J
                             </Avatar>
                             }
-                        titleTypographyProps={{
-                            fontSize: "18px",
-                            fontWeight: "Semi-bold",
-                            color: "#FD9F5A"
-                            }}
-                        subheaderTypographyProps={{
-                            fontSize: "10px",
-                            paddingLeft: "5px",
-                            color: "#FD9F5A"
-                            }}
+                        titleTypographyProps={Styles.CardHeaderTitle}
+                        subheaderTypographyProps={Styles.CardSubHeader}
                         title={contactName}
                         subheader="Online Now"
                     />
@@ -78,43 +65,23 @@ const MessageConversation = ({ onBackButtonClick }) => {
                             overflowY: 'auto', 
                             padding: "0px",
                             ...customScrollbar
-                            // '&:hover': {
-                            //     backgroundColor: '#0000',
-                            //     overflowY: 'scroll',
-                            // },
-                            // '&::-webkit-scrollbar': {
-                            //     width: '12px',
-                            // },
-                            // '&::-webkit-scrollbar-track': {
-                            //     backgroundColor: '#FFF0E7',
-                            // },
-                            // '&::-webkit-scrollbar-thumb': {
-                            //     backgroundColor: '#FF9E6C',
-                            //     borderRadius: '6px',
-                            //     transition: 'overflow 0.5s ease', 
-                            // },
                         }}>
-                        <List>
-                            {selectedConversationMessages.map((message) => (
-                                <MessageBubble key={message.id} message={message} isYou={message.sender === 'You'} />
-                            ))}
-                        </List>
+                        {selectedConversationMessages.length > 0 ? (
+                            <List>
+                                {selectedConversationMessages.map((message) => (
+                                    <MessageBubble key={message.id} message={message} isYou={message.sender === 'You'} />
+                                ))}
+                            </List>
+                        ) : (
+                            <Box sx={Styles.BoxNotice}>
+                                <Typography>You do not have a conversation with this motherfvcker!</Typography>
+                            </Box>
+                        )}
+                        
                     </CardContent>
                     <CardActions sx={{ mt: 'auto', p: 2 }}>
                         <TextField 
-                            sx={{
-                                '& .MuiOutlinedInput-root': {
-                                    '& fieldset': {
-                                      borderColor: '#FD9F5B', // Default border color
-                                    },
-                                    '&:hover fieldset': {
-                                      borderColor: '#FD9F5A', // Border color on hover
-                                    },
-                                    '&.Mui-focused fieldset': {
-                                      borderColor: '#FD9F5A', // Border color on focus
-                                    },
-                                },
-                            }}
+                            sx={Styles.CardActionTextBox}
                             fullWidth 
                             placeholder="Type your message here..." 
                             InputProps={{

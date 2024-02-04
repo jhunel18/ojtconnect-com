@@ -15,20 +15,32 @@ const MessagesList = () => {
     const [isSmallScreen, setIsSmallScreen] = useState(false);
     const [selectedMessage, setSelectedMessage] = useState(null);
 
+    const filterConversations = (conversations, filter) => {
+        if (filter === 'Unread') {
+            return conversations.filter((conversation) => conversation.unread > 0);
+        }
+        // For 'All' filter, return all conversations
+        return conversations;
+    };
+
     const handleConversationClick = (conversationId, unread) => {
         dispatch(selectConversation(conversationId));
         if (unread > 0) {
             dispatch(resetUnreadMessages(conversationId));
         }
-        setSelectedMessage(conversationId);
+        setSelectedMessage(conversationId); // Always set the selected message
     };
 
     const handleFilterAll = () => {
         dispatch(filterAllMessages());
+        // Always set the selected message to the current selected conversation
+        setSelectedMessage(selectedConversationId);
     };
     
     const handleFilterUnread = () => {
         dispatch(filterUnreadMessages());
+        // Always set the selected message to the current selected conversation
+        setSelectedMessage(selectedConversationId);
     };
 
     const getLastMessage = (conversationId) => {
@@ -51,17 +63,22 @@ const MessagesList = () => {
     const handleSelectedMessage = (messageId) => {
         setSelectedMessage(messageId);
     };
-    
+
+    const filteredConversations = filterConversations(conversations, filter);
+
     return(
         <>
             <Card sx={{ 
                 flex: "1", 
                 borderRadius: isSmallScreen ? '0' : '20px',
                 margin: "0", 
-                overflow: "hidden" 
+                overflow: "hidden",
+                display: 'flex',
+                flexDirection: 'column',
+                height: '100%', 
             }}>
                 <CardHeader 
-                    sx={Style.CardHeader}
+                    sx={{...Style.CardHeader}}
                     titleTypographyProps={Style.CardHeaderTitle}
                     title="Messages" 
                 />
@@ -84,120 +101,72 @@ const MessagesList = () => {
                     </ToggleButton>
                 </Stack>
                 <Divider sx={{boxShadow: 1}}/>
-                <CardContent 
-                    sx={{
-                        ...Style.cardContentScrollbarStyle,
-                        padding: 0,
-                        margin: 0,
-                        overflowY: "auto",
-                        height: '100%'
-                    }}
-                    onMouseEnter={() => setIsHovered(true)}
-                    onMouseLeave={() => setIsHovered(false)}
-                >
-                    <List sx={{padding: "0px"}}>
-                    {conversations.map((conversation) => (
-                        <Box key={conversation.id} display="flex" flexDirection="column">
-                            <ListItemButton 
-                                key={conversation.id} 
-                                onClick={() => handleConversationClick(conversation.id, conversation.unread)}
-                                sx={{ backgroundColor: conversation.id === selectedConversationId ? '#f0f0f0' : 'inherit', borderBottom: "1px solid #D5D4DF"}}
-                            >
-                                {conversation.unread > 0 && (
-                                    <Grid container spacing={1}>
-                                        <Grid item xs={2.5}>
-                                            <Avatar alt={conversation.contactName.substring(0, 1)} sx={{width: "50px", height: "50px"}}/>
-                                        </Grid>
-                                        <Grid item xs={8}>
-                                        <ListItemText sx={{mb: 0}}
-                                                primary={
-                                                    <Typography color={"#FD9F5A"} lineHeight={1}>
-                                                        {conversation.contactName}
-                                                    </Typography>} 
-                                                secondary={
-                                                        <Typography sx={{
-                                                            fontSize: "11px",
-                                                            whiteSpace: 'nowrap',
-                                                            overflow: 'hidden',
-                                                            textOverflow: 'ellipsis',
-                                                            maxWidth: '210px',
-                                                            color: "#FD9F5A"
-                                                        }}>
+                <CardContent sx={{padding: "0px", ...Style.cardContentScrollbarStyle}}>
+                    <Box 
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
+                    >
+                        {filteredConversations.length > 0 ? (
+                            filteredConversations.map((conversation) => (
+                                <Box key={conversation.id} sx={{display:"flex", flexDirection:"column",}}>
+                                    <ListItemButton 
+                                        key={conversation.id} 
+                                        onClick={() => handleConversationClick(conversation.id, conversation.unread)}
+                                        sx={{ backgroundColor: conversation.id === selectedConversationId ? '#f0f0f0' : 'inherit', borderBottom: "1px solid #D5D4DF"}}
+                                    >
+                                        {/* Render the contact name for both unread and read conversations */}
+                                        <Grid container spacing={1}>
+                                            <Grid item xs={2.5}>
+                                                {conversation.avatar ? (
+                                                    <Avatar sx={{width: "50px", height: "50px"}} alt={conversation.contactName} src={conversation.avatar} />
+                                                ) : (
+                                                    <Avatar sx={{width: "50px", height: "50px", bgcolor: '#FD9F5A' }}>{conversation.contactName.charAt(0).toUpperCase()}</Avatar>
+                                                )}
+                                            </Grid>
+                                            <Grid item xs={8}>
+                                                <ListItemText sx={{mb: 0}}
+                                                    primary={
+                                                        <Typography color={"#FD9F5A"} lineHeight={1}>
+                                                            {conversation.contactName}
+                                                        </Typography>} 
+                                                    secondary={
+                                                        <Typography sx={Style.ListItemTextSecondary}>
                                                             {getLastMessage(conversation.id)}
                                                         </Typography>
-                                                }
-                                            />
-                                             <ListItemText sx={{mt: 0}}
-                                                secondary={
-                                                    <Typography sx={{
-                                                        fontSize: "9px",
-                                                        whiteSpace: 'nowrap',
-                                                        overflow: 'hidden',
-                                                        textOverflow: 'ellipsis',
-                                                        maxWidth: '210px',
-                                                        marginLeft: "10px",
-                                                        color: "#FD9F5A"
-                                                    }}>
-                                                        {conversation.onlineText}
-                                                    </Typography>
-                                                }
-                                            />
-                                        </Grid>
-                                        <Grid item xs={1.5} sx={{display: "flex", alignItems: "center"}}>
-                                            <Badge color="primary" badgeContent={conversation.unread} sx={Style.badgeStyle}>
-                                            </Badge>
-                                        </Grid>
-                                    </Grid>
-                                )}
-                                {conversation.unread === 0 && (
-                                    <Grid container spacing={1}>
-                                        <Grid item xs={2.5}>
-                                            <Avatar alt={conversation.contactName.substring(0, 1)} sx={{width: "50px", height: "50px"}}/>
-                                        </Grid>
-                                        <Grid item xs={8}>
-                                            <ListItemText sx={{mb: 0}}
-                                                primary={
-                                                    <Typography color={"#FD9F5A"} lineHeight={1}>
-                                                        {conversation.contactName}
-                                                    </Typography>} 
-                                                secondary={
+                                                    }
+                                                />
+                                                <ListItemText sx={{mt: 0}}
+                                                    secondary={
                                                         <Typography sx={{
-                                                            fontSize: "11px",
-                                                            whiteSpace: 'nowrap',
-                                                            overflow: 'hidden',
-                                                            textOverflow: 'ellipsis',
-                                                            maxWidth: '210px',
+                                                            ...Style.ListItemTextSecondary,
+                                                            fontSize: "9px",
+                                                            marginLeft: "10px",
                                                             color: "#FD9F5A"
                                                         }}>
-                                                            {getLastMessage(conversation.id)}
+                                                            {conversation.onlineText}
                                                         </Typography>
-                                                }
-                                            />
-                                             <ListItemText sx={{mt: 0}}
-                                                secondary={
-                                                    <Typography sx={{
-                                                        fontSize: "9px",
-                                                        whiteSpace: 'nowrap',
-                                                        overflow: 'hidden',
-                                                        textOverflow: 'ellipsis',
-                                                        maxWidth: '210px',
-                                                        marginLeft: "10px",
-                                                        color: "#FD9F5A"
-                                                    }}>
-                                                        {conversation.onlineText}
-                                                    </Typography>
-                                                }
-                                            />
+                                                    }
+                                                />
+                                            </Grid>
+                                            <Grid item xs={1.5} sx={{display: "flex", alignItems: "center"}}>
+                                                {/* Render the unread badge for unread conversations */}
+                                                {conversation.unread > 0 && (
+                                                    <Badge color="primary" badgeContent={conversation.unread} sx={Style.badgeStyle}>
+                                                    </Badge>
+                                                )}
+                                            </Grid>
                                         </Grid>
-                                        <Grid item xs={1.5}>
-                                            
-                                        </Grid>
-                                    </Grid>
-                                )}
-                            </ListItemButton>
-                        </Box>
-                    ))}
-                    </List>
+                                    </ListItemButton>
+                                </Box>
+                            ))
+                        ) : (
+                            // Display "No Unread Messages" message
+                            <Box sx={{...Style.BoxNotice, minHeight: "70%"}}>
+                                <Typography variant='body1'>No Unread Messages</Typography>
+                            </Box>
+                        )}
+                    </Box>
+                    
                 </CardContent>
             </Card>
             {isSmallScreen && selectedMessage && (
