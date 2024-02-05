@@ -5,6 +5,7 @@ import MessagesList from "../../components/MessageList";
 import MessageConversation from "../../components/MessageConversation";
 import Notifications from "../../components/Notifications";
 import bgImg from '../../assets/MAINBGbg.png'
+import MainLayout from "../../layouts/MainLayout";
 
 const MessagePage = () => {
     const [selectedMessage, setSelectedMessage] = useState(null);
@@ -16,17 +17,9 @@ const MessagePage = () => {
         <Grid container spacing={0}>
             <Hidden smDown mdDown>
                 <Grid item xs={12}>
-                    <Box sx={{
-                        display: "flex",
-                        alignItems: "stretch",
-                        backgroundImage:`url(${bgImg})`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundSize: "cover",
-                        height: "100vh",
-                        padding: "25px"
-                    }}>
-                        <Container maxWidth="lg">
-                            <Box>
+                    <MainLayout>
+                        <Container maxWidth="lg" sx={{height: "92.5vh"}}>
+                            <Box sx={{padding: "20px 20px 20px 20px"}}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={3.5}>
                                         <Box  sx={{display: 'flex', flexDirection: 'column', height: '100vh' }}>
@@ -46,22 +39,14 @@ const MessagePage = () => {
                                 </Grid>
                             </Box>
                         </Container>
-                    </Box>
+                    </MainLayout>
                 </Grid>
             </Hidden>
             <Hidden mdUp smDown>
                 <Grid item xs={12}>
-                    <Box sx={{
-                        display: "flex",
-                        alignItems: "stretch",
-                        backgroundImage:`url(${bgImg})`,
-                        backgroundRepeat: "no-repeat",
-                        backgroundSize: "cover",
-                        height: "100vh",
-                        padding: "25px"
-                    }}>
-                        <Container maxWidth="lg">
-                            <Box>
+                    <MainLayout>
+                        <Container maxWidth="lg" sx={{height: "92.5vh"}}>
+                            <Box sx={{padding: "20px 20px 20px 20px"}}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={5}>
                                         <Box  sx={{display: 'flex', flexDirection: 'column', height: '100vh' }}>
@@ -76,7 +61,7 @@ const MessagePage = () => {
                                 </Grid>
                             </Box>
                         </Container>
-                    </Box>
+                    </MainLayout>
                 </Grid>
             </Hidden>
             <Hidden smUp lgUp only={['md', 'xl']} implementation="js">

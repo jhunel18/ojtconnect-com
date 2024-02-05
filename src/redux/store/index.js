@@ -1,5 +1,5 @@
 // store.js
-import messagesReducer from '../reducers/messagesReducers';
+import messagesReducer from '../reducers/messagesSlice';
 import { joblistSlice } from '../reducers/joblistReducers';
 import { configureStore } from '@reduxjs/toolkit';
 
