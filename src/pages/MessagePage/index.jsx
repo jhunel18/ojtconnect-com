@@ -45,7 +45,7 @@ const MessagePage = () => {
             <Hidden mdUp smDown>
                 <Grid item xs={12}>
                     <MainLayout>
-                        <Container maxWidth="lg" sx={{height: "92.5vh"}}>
+                        <Container maxWidth="lg" sx={{height: "84vh"}}>
                             <Box sx={{padding: "20px 20px 20px 20px"}}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={5}>
