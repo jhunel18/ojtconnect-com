@@ -18,8 +18,8 @@ const MessagePage = () => {
             <Hidden smDown mdDown>
                 <Grid item xs={12}>
                     <MainLayout>
-                        <Container maxWidth="lg">
-                            <Box sx={{padding: "80px 20px 20px 20px"}}>
+                        <Container maxWidth="lg" sx={{height: "92.5vh"}}>
+                            <Box sx={{padding: "20px 20px 20px 20px"}}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={3.5}>
                                         <Box  sx={{display: 'flex', flexDirection: 'column', height: '100vh' }}>
@@ -45,8 +45,8 @@ const MessagePage = () => {
             <Hidden mdUp smDown>
                 <Grid item xs={12}>
                     <MainLayout>
-                        <Container maxWidth="lg">
-                            <Box sx={{padding: "40px 20px 20px 20px"}}>
+                        <Container maxWidth="lg" sx={{height: "92.5vh"}}>
+                            <Box sx={{padding: "20px 20px 20px 20px"}}>
                                 <Grid container spacing={2}>
                                     <Grid item xs={5}>
                                         <Box  sx={{display: 'flex', flexDirection: 'column', height: '100vh' }}>

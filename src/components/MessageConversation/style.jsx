@@ -60,3 +60,27 @@ export const Styles = ({
     },
   }
 })
+
+export const MsgBblStyle = ({
+  ListItem: {
+    display: 'flex',
+    flexDirection: 'column',
+    marginTop: '4px',
+    marginBottom: '4px',
+  },
+  Box: {
+    display: 'flex',
+    alignItems: 'center'
+  },
+  Typography: {
+    color: '#FD9F5A', 
+    fontSize: '12px', 
+    marginBottom: '4px', 
+  },
+  ChatBox: {
+    padding: '8px 12px',
+    borderRadius: '8px',
+    wordBreak: 'break-word',
+    textAlign: 'left', 
+  }
+})
