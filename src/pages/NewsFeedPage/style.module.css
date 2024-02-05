@@ -1,0 +1,11 @@
+.container{
+    display: 'flex';
+    justify-content: space-evenly;
+    align-items: center;
+}
+.box{
+    flex: 1;
+}
+.middle-box{
+    flex: 1;
+}

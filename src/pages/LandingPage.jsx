@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink, Element } from 'react-scroll';
 
-import { Box, Typography, Button, Grid, Hidden } from '@mui/material';
+import { Box, Typography, Button, Hidden } from '@mui/material';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Menu, MenuItem } from '@mui/material';
@@ -88,10 +89,10 @@ const LandingPage = () => {
                         <Hidden lgDown>
                             <div style={{ display: 'flex', alignItems: 'center', marginLeft: 'auto', justifyContent: 'center' }}>
                                 <ul className='inter-font header'>
-                                    <li><ScrollLink to='home_section' smooth={true} duration={1000}><a className='nav-link' href='#'>HOME</a></ScrollLink></li>
-                                    <li><ScrollLink to='about_section' smooth={true} duration={1000}><a className='nav-link' href='#'>ABOUT</a></ScrollLink></li>
-                                    <li><ScrollLink to='discover_section' smooth={true} duration={1000}><a className='nav-link' href='#'>DISCOVER</a></ScrollLink></li>
-                                    <li><ScrollLink to='contact_section' smooth={true} duration={1000}><a className='nav-link' href='#'>CONTACT US</a></ScrollLink></li>
+                                    <li className='nav_list'><ScrollLink to='home_section' smooth={true} duration={1000}><a className='nav-link' href='#'>HOME</a></ScrollLink></li>
+                                    <li className='nav_list'><ScrollLink to='about_section' smooth={true} duration={1000}><a className='nav-link' href='#'>ABOUT</a></ScrollLink></li>
+                                    <li className='nav_list'><ScrollLink to='discover_section' smooth={true} duration={1000}><a className='nav-link' href='#'>DISCOVER</a></ScrollLink></li>
+                                    <li className='nav_list'><ScrollLink to='contact_section' smooth={true} duration={1000}><a className='nav-link' href='#'>CONTACT US</a></ScrollLink></li>
                                 </ul>
 
                             </div>

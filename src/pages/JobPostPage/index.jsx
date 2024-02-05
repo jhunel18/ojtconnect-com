@@ -3,10 +3,13 @@ import React from 'react'
 // Parent Layout
 import MainLayout from '../../layouts/MainLayout';
 
+// Components
+import JobPostList from '../../components/JobPostList';
+
 const JobPostPage = () => {
   return (
     <MainLayout>
-        <h1>Job Post Page</h1>
+        <JobPostList />
     </MainLayout>
   )
 }

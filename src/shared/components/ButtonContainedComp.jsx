@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@mui/material'
 
-const ButtonContainedComp = ({label, click, size, padding, width}) => {
+const ButtonContainedComp = ({label, click, size, padding, width, borderRadius}) => {
   
   return (<>
       <Button variant="contained" onClick={click} size={size}
@@ -12,6 +12,7 @@ const ButtonContainedComp = ({label, click, size, padding, width}) => {
           padding:{padding},
           border: '2px solid #F26822',
           width: width,
+          borderRadius:{borderRadius},
           "&:hover": {
             background: '#ffff',
             color: '#F26822',

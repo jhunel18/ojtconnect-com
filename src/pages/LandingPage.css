@@ -19,7 +19,7 @@
     float: right;
 }
 
-li {
+.nav_list {
     display: inline-block;
     text-align: center;
     padding: 16px 22px;
