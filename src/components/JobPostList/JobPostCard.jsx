@@ -1,9 +1,9 @@
 import { Box, Typography } from '@mui/material';
 import React from 'react';
 
-const JobPostCard = () => {
+const JobPostCard = ({isActive, click}) => {
 
-    const style = ({
+    const card_style = ({
         card: {
             backgroundColor: '#FDFBFA',
             width: 'auto',
@@ -12,7 +12,7 @@ const JobPostCard = () => {
             boxShadow: '3px 2px 10px rgba(0, 0, 0, 0.25)',
             padding: '10px 5px',
             margin: '10px',
-            borderLeft: '15px solid transparent',
+            borderLeft: !isActive ? '15px solid transparent' : '15px solid #f6b898',
             '&:hover': {
                 borderLeft: '15px solid #FFDDC3',
                 cursor: 'pointer'
@@ -21,7 +21,7 @@ const JobPostCard = () => {
     })
 
     return (
-        <Box sx={style.card}>
+        <Box sx={card_style.card} onClick={click}>
             <div style={{
                 padding: '15px',
                 borderBottom: '1px solid #D5D4DF'
