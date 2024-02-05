@@ -1,6 +1,6 @@
 // store.js
 import messagesReducer from '../reducers/messagesSlice';
-import { joblistSlice } from '../reducers/joblistReducers';
+import { joblistSlice } from '../reducers/joblistSlice';
 import { configureStore } from '@reduxjs/toolkit';
 
 const store = configureStore({

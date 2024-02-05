@@ -1,3 +1,3 @@
-import { joblistSlice } from "../reducers/joblistReducers";
+import { joblistSlice } from "../reducers/joblistSlice";
 
 export const { setIsActive } = joblistSlice.actions;
