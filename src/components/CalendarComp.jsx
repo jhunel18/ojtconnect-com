@@ -29,43 +29,11 @@ const CalendarComp = () => {
         }
       }
     return (<>
-        <Box sx={{background: '#ffffff', p: '25px', border: '1px solid black', borderRadius: '20px'}}>
+        <Box sx={{background: '#ffffff', p: '25px', borderRadius: '20px', width: 'auto', height: 'auto', fontFamily: '"Roboto","Helvetica","Arial",sans-serif'}}>
             <Box display={'flex'} justifyContent={"center"}>
-                {/*Calendar Side Bar*/}
-                {/*
-                    <Box flex={"1 1 20%"} backgroundColor={"pink"} p={"15px"} borderRadius={"4px"}>
-                        <Typography variant='h5'>Events</Typography>
-                        <List>
-                        {currentEvents.map((event) => (
-                            <ListItem key={event.id}
-                            sx={{
-                                backgroundColor: "orange",
-                                margin: "10px 0",
-                                borderRadius: "2px"
-                            }}
-                            >
-                            <ListItemText
-                                primary={event.title}
-                                secondary={
-                                <Typography>
-                                    {formatDate(event.start, {
-                                    year: "numeric",
-                                    month: "short",
-                                    day: "numeric"
-                                    })}
-                                </Typography>
-                                }
-                            />
-                            </ListItem>
-                        ))}
-                        </List>
-                    </Box>
-                */}
-
-                {/*Calendar */}
                 <Box flex={"1 1 100%"}>
                     <FullCalendar 
-                        height={"75vh"}
+                        height={"35vh"}
                         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin, listPlugin]}
                         headerToolbar={{
                             left: "title",

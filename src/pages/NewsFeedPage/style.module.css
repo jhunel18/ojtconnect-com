@@ -9,3 +9,12 @@
 .middle-box{
     flex: 1;
 }
+
+.student_list::-webkit-scrollbar-thumb {
+    background-color: #FF9E6C;
+    border-radius: 8px;
+}
+
+.student_list::-webkit-scrollbar {
+    width: 8px;
+}

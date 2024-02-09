@@ -8,7 +8,7 @@ const SchedulesComp = () => {
 
   return (
     <>
-        <Box sx={{background: '#ffffff', p: '25px', border: '1px solid #ffffff', borderRadius: '20px'}}>
+        <Box sx={{background: '#ffffff', p: '25px', border: '1px solid #ffffff', borderRadius: '20px', width: 'auto', height: 'auto'}}>
             <Typography variant="h5" sx={{fontWeight: 'bold', pl: '10px', mb: '15px'}}>Schedules</Typography>
             <Box display={"flex"} justifyContent={"flex-start"} alignItems={"stretch"}>
                 <Typography variant="h5"
@@ -34,7 +34,7 @@ const SchedulesComp = () => {
             </Box>
             <Box display={"flex"} justifyContent={"center"} alignItems={"center"}
                 sx={{
-                    height: '200px',
+                    height: '100px',
                     width: '100%'
                 }}
             >
@@ -43,7 +43,7 @@ const SchedulesComp = () => {
             <Typography variant="h6" sx={{fontWeight: 'bold'}}>Notes</Typography>
             <Box display={"flex"} justifyContent={"center"} alignItems={"center"}
                 sx={{
-                    height: '150px',
+                    height: '100px',
                     width: '100%'
                 }}
             >

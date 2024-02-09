@@ -4,7 +4,7 @@ import StarOutlineRoundedIcon from '@mui/icons-material/StarOutlineRounded';
 import React, { useState } from 'react'
 
 const StudentListComp = ({student = {
-    name: 'Jhoberta Mapaye Erato',
+    name: 'Maria Luisa Nhicole Dela Cruz',
     course: 'BSIT',
     university: 'PUP Unisan Branch',
 
@@ -16,8 +16,10 @@ const StudentListComp = ({student = {
                 background: '#FDFBFA',
                 p: '4%',
                 borderRadius: '20px',
-                m: '30px',
-                position: 'relative'
+                position: 'relative',
+                width: 'auto',
+                height: 'auto',
+                mr: '10px'
                 // '&:hover':{
                 //     borderLeft: '30px solid #FFDDC3'
                 // }
@@ -35,7 +37,7 @@ const StudentListComp = ({student = {
                     position: 'absolute',
                     top: 0,
                     borderRadius: '20px 0 0 20px',
-                    display: show ? undefined : 'none'
+                    display: show ? undefined : 'none',
                 }}
             >
             
@@ -47,7 +49,7 @@ const StudentListComp = ({student = {
                 mb={'10px'}
                 p={"0 20px"}
             >
-                <Typography variant='h5'
+                <Typography variant='h6'
                     sx={{
                         fontWeight: 'bolder',
                         mr: '20px'
