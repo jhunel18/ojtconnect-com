@@ -13,6 +13,7 @@ const ImageContainer = ({ src }) => {
     overflow: 'hidden',
     borderRadius: '20px 0 0 20px',
     background: `url(${src}) center/cover no-repeat`,
+    backgroundSize: 'cover',
     transition: 'opacity 1s ease', 
     opacity: isVisible ? 1 : 0, 
   };

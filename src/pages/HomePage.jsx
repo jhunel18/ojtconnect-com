@@ -61,7 +61,7 @@ const HomePage = () => {
                  {showLogin && shouldShowImage && (
 
                     <img className='img_slider'
-                         src={currentRoute.pathname.includes('/verified/company') ? CompanyImage2 : bg} width={"30%"} 
+                         src={currentRoute.pathname.includes('/verified/company') ? CompanyImage2 : bg} width={500} 
                     />   
                  )}
 
